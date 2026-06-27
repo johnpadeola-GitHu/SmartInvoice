@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<!--
+  SmartInvoice Pro — Admin Dashboard
+  Copyright (c) 2026 Ipadeola Agoro Technologies. All Rights Reserved.
+  CONFIDENTIAL — Authorised Personnel Only
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1a1108">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>SmartInvoice Pro — Admin</title>
+<style>
+:root{
+  --bg:#f0f2f5;--surface:#fff;--surface-2:#f8f9fb;--surface-3:#eef0f4;
+  --sidebar:#1a1108;--sidebar-active:rgba(184,58,9,.18);
+  --accent:#B83A09;--accent-d:#8c2c07;--accent-t:#fef0ea;
+  --text:#18202e;--text-2:#4a5568;--text-3:#8a94a8;
+  --border:#e2e8f0;--border-2:#cbd5e1;
+  --green:#16a34a;--green-bg:rgba(22,163,74,.08);
+  --amber:#d97706;--amber-bg:rgba(217,119,6,.08);
+  --red:#dc2626;--red-bg:rgba(220,38,38,.07);
+  --shadow:0 2px 8px rgba(0,0,0,.06);--shadow-md:0 4px 20px rgba(0,0,0,.1);
+  --font:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --mono:'JetBrains Mono','SF Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);font-size:15px}
+body{font-family:var(--font);color:var(--text);min-height:100vh;-webkit-tap-highlight-color:transparent}
+a{color:var(--accent);text-decoration:none}
+button{cursor:pointer;font-family:var(--font)}
+
+/* ── Login ── */
+.login-card{background:var(--surface);padding:36px 32px;max-width:380px;width:90%;box-shadow:var(--shadow-md)}
+.login-logo{font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--accent);margin-bottom:4px}
+.login-sub{font-size:.8rem;color:var(--text-3);margin-bottom:28px}
+.lf{margin-bottom:16px}
+.lf label{display:block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-3);margin-bottom:6px}
+.lf input{width:100%;border:1.5px solid var(--border-2);padding:10px 13px;font-size:15px;font-family:var(--font);color:var(--text);outline:none;transition:border-color .15s}
+.lf input:focus{border-color:var(--accent)}
+.login-err{font-size:.8rem;color:var(--red);margin-bottom:12px;min-height:18px}
+.login-btn{width:100%;height:46px;background:var(--accent);color:#fff;border:none;font-size:.95rem;font-weight:700;transition:background .15s}
+.login-btn:hover{background:var(--accent-d)}
+
+/* ── App shell ── */
+#app{display:none;flex-direction:row;min-height:100vh}
+.sidebar{width:220px;background:var(--sidebar);flex-shrink:0;display:flex;flex-direction:column;position:fixed;top:0;bottom:0;left:0;overflow:hidden}
+.sb-brand{padding:22px 20px 18px;border-bottom:1px solid rgba(255,255,255,.08)}
+.sb-logo{font-family:Georgia,serif;font-size:1rem;font-weight:700;color:#e8743a}
+.sb-sub{font-size:.68rem;color:rgba(255,255,255,.35);letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+.sb-nav{padding:12px 0;flex:1;overflow-y:auto}
+.sb-item{display:flex;align-items:center;gap:10px;padding:10px 20px;font-size:.84rem;color:rgba(255,255,255,.6);cursor:pointer;border-left:3px solid transparent;transition:all .15s;border:none;background:none;width:100%;text-align:left}
+.sb-item:hover{background:rgba(255,255,255,.06);color:#fff}
+.sb-item.active{background:var(--sidebar-active);color:#e8743a;border-left-color:#e8743a;font-weight:600}
+.sb-item svg{width:16px;height:16px;flex-shrink:0;opacity:.7}
+.sb-footer{padding:16px 20px;border-top:1px solid rgba(255,255,255,.08);font-size:.72rem;color:rgba(255,255,255,.3);line-height:1.7}
+.sb-logout{display:block;margin-top:8px;color:rgba(255,255,255,.45);cursor:pointer;border:none;background:none;font-size:.75rem;font-family:var(--font);padding:0;text-align:left}
+.sb-logout:hover{color:#fff}
+
+.main-content{margin-left:220px;flex:1;padding:28px 32px;min-height:100vh;overflow-y:auto}
+@media(max-width:700px){.sidebar{display:none}.main-content{margin-left:0;padding:16px}}
+
+/* ── Screens ── */
+.panel{display:none}.panel.active{display:block}
+.panel-title{font-size:1.1rem;font-weight:700;margin-bottom:20px;color:var(--text)}
+
+/* ── Stats grid ── */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:24px}
+.stat-card{background:var(--surface);border:1px solid var(--border);padding:18px 16px;box-shadow:var(--shadow)}
+.stat-card__label{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--text-3);margin-bottom:8px}
+.stat-card__value{font-family:var(--mono);font-size:1.4rem;font-weight:700;color:var(--text)}
+.stat-card--green .stat-card__value{color:var(--green)}
+.stat-card--accent .stat-card__value{color:var(--accent)}
+
+/* ── Chart ── */
+.chart-wrap{background:var(--surface);border:1px solid var(--border);padding:20px;margin-bottom:24px;box-shadow:var(--shadow)}
+.chart-title{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-3);margin-bottom:16px}
+#rev-chart{display:flex;align-items:flex-end;gap:6px;height:140px;padding-bottom:24px;position:relative}
+.bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px}
+.bar{width:100%;background:var(--accent);opacity:.85;transition:opacity .2s;min-height:4px;cursor:default;position:relative}
+.bar:hover{opacity:1}
+.bar-label{font-size:.62rem;color:var(--text-3);white-space:nowrap}
+
+/* ── Table ── */
+.table-wrap{background:var(--surface);border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow);margin-bottom:20px}
+.table-head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.table-head h3{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-3)}
+table{width:100%;border-collapse:collapse;font-size:.84rem}
+th{text-align:left;padding:10px 14px;background:var(--surface-2);border-bottom:1px solid var(--border);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-3)}
+td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text-2);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--surface-3)}
+
+/* ── Badges ── */
+.badge{display:inline-block;padding:2px 9px;font-size:.72rem;font-weight:700;border-radius:0}
+.badge--success{background:var(--green-bg);color:var(--green)}
+.badge--pending{background:var(--amber-bg);color:var(--amber)}
+.badge--paid{background:var(--green-bg);color:var(--green)}
+.badge--failed{background:var(--red-bg);color:var(--red)}
+
+/* ── Forms ── */
+.form-inline{display:flex;gap:8px;flex-wrap:wrap;padding:14px 16px;border-top:1px solid var(--border);background:var(--surface-2)}
+.fi-field{display:flex;flex-direction:column;gap:4px;flex:1;min-width:140px}
+.fi-field label{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text-3)}
+.fi-field input,.fi-field select{border:1.5px solid var(--border-2);padding:8px 10px;font-size:.84rem;font-family:var(--font);color:var(--text);background:var(--surface);outline:none;transition:border-color .15s}
+.fi-field input:focus,.fi-field select:focus{border-color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:0 16px;height:38px;font-size:.84rem;font-weight:700;border:none;cursor:pointer;font-family:var(--font);white-space:nowrap;user-select:none;-webkit-tap-highlight-color:transparent;transition:background .15s}
+.btn--primary{background:var(--accent);color:#fff}
+.btn--primary:hover{background:var(--accent-d)}
+.btn--ghost{background:var(--surface);color:var(--text-2);border:1px solid var(--border-2)}
+.btn--ghost:hover{background:var(--surface-3)}
+.btn--green{background:var(--green);color:#fff}
+.btn--sm{height:30px;padding:0 12px;font-size:.76rem}
+
+/* ── Alert ── */
+.alert{padding:11px 14px;font-size:.86rem;line-height:1.5;margin-bottom:14px}
+.alert--error{background:var(--red-bg);color:var(--red);border-left:4px solid var(--red)}
+.alert--success{background:var(--green-bg);color:var(--green);border-left:4px solid var(--green)}
+
+/* ── Toast ── */
+#toast{position:fixed;bottom:24px;right:24px;transform:translateY(80px);opacity:0;background:var(--text);color:#fff;padding:11px 20px;font-size:.86rem;font-weight:600;z-index:9999;pointer-events:none;box-shadow:var(--shadow-md);transition:transform .25s cubic-bezier(.34,1.4,.64,1),opacity .25s;max-width:300px}
+#toast.show{transform:translateY(0);opacity:1}
+#toast.success{background:var(--green)}
+#toast.error{background:var(--red)}
+
+/* ── Loading ── */
+.loading{text-align:center;padding:40px;color:var(--text-3);font-size:.875rem}
+</style>
+</head>
+<body>
+
+<!-- ── Login ── -->
+<!-- Login screen removed: protected by Cloudflare Access -->
+
+<!-- ── App ── -->
+<div id="app">
+  <nav class="sidebar">
+    <div class="sb-brand">
+      <div class="sb-logo">SmartInvoice Pro</div>
+      <div class="sb-sub">Admin Dashboard</div>
+    </div>
+    <div class="sb-nav">
+      <button class="sb-item active" onclick="showPanel('dashboard')">
+        <svg viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6"/><rect x="9" y="1" width="6" height="6"/><rect x="1" y="9" width="6" height="6"/><rect x="9" y="9" width="6" height="6"/></svg>
+        Dashboard
+      </button>
+      <button class="sb-item" onclick="showPanel('agents')">
+        <svg viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="5" r="3"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6H2z"/></svg>
+        Agents
+      </button>
+      <button class="sb-item" onclick="showPanel('payments')">
+        <svg viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="3" width="14" height="10" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M1 7h14"/></svg>
+        Payments
+      </button>
+      <button class="sb-item" onclick="showPanel('payouts')">
+        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1v14M3 5l5-4 5 4M3 11l5 4 5-4"/></svg>
+        Payouts
+      </button>
+    </div>
+    <div class="sb-footer">
+      Logged in as <strong id="sb-user">—</strong>
+    </div>
+  </nav>
+
+  <div class="main-content">
+
+    <!-- ── DASHBOARD ── -->
+    <div id="panel-dashboard" class="panel active">
+      <div class="panel-title">Dashboard</div>
+      <div class="stats-grid" id="dash-stats">
+        <div class="stat-card"><div class="stat-card__label">Total Revenue</div><div class="stat-card__value" id="d-revenue">—</div></div>
+        <div class="stat-card stat-card--accent"><div class="stat-card__label">Total Payments</div><div class="stat-card__value" id="d-payments">—</div></div>
+        <div class="stat-card stat-card--green"><div class="stat-card__label">Active Agents</div><div class="stat-card__value" id="d-agents">—</div></div>
+        <div class="stat-card"><div class="stat-card__label">Commissions Paid</div><div class="stat-card__value" id="d-commissions">—</div></div>
+      </div>
+
+      <div class="chart-wrap">
+        <div class="chart-title">Monthly Revenue (last 12 months)</div>
+        <div id="rev-chart"><div class="loading">Loading chart…</div></div>
+      </div>
+
+      <div class="table-wrap">
+        <div class="table-head"><h3>Agent Leaderboard</h3></div>
+        <div style="overflow-x:auto">
+          <table>
+            <thead><tr><th>#</th><th>Name</th><th>Market</th><th>Sales</th><th>Revenue</th><th>Earnings</th><th>Balance</th></tr></thead>
+            <tbody id="leaderboard-body"><tr><td colspan="7" class="loading">Loading…</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── AGENTS ── -->
+    <div id="panel-agents" class="panel">
+      <div class="panel-title">Agents</div>
+      <div class="table-wrap">
+        <div class="table-head">
+          <h3>All Agents</h3>
+          <button class="btn btn--ghost btn--sm" onclick="loadAgents()">Refresh</button>
+        </div>
+        <div style="overflow-x:auto">
+          <table>
+            <thead><tr><th>Name</th><th>Phone</th><th>Market</th><th>Sales</th><th>Revenue</th><th>Balance</th><th>Status</th><th></th></tr></thead>
+            <tbody id="agents-body"><tr><td colspan="8" class="loading">Loading…</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PAYMENTS ── -->
+    <div id="panel-payments" class="panel">
+      <div class="panel-title">Payments</div>
+      <div class="table-wrap">
+        <div class="table-head">
+          <h3>Recent Transactions</h3>
+          <div style="display:flex;gap:8px">
+            <select id="pay-filter" onchange="loadPayments()" style="border:1px solid var(--border-2);padding:5px 10px;font-size:.8rem;font-family:var(--font);background:var(--surface);color:var(--text)">
+              <option value="">All</option>
+              <option value="success">Success</option>
+              <option value="pending">Pending</option>
+              <option value="failed">Failed</option>
+            </select>
+            <button class="btn btn--ghost btn--sm" onclick="loadPayments()">Refresh</button>
+          </div>
+        </div>
+        <div style="overflow-x:auto">
+          <table>
+            <thead><tr><th>Reference</th><th>Email</th><th>Plan</th><th>Amount</th><th>Agent</th><th>Commission</th><th>Status</th><th>Date</th></tr></thead>
+            <tbody id="payments-body"><tr><td colspan="8" class="loading">Loading…</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PAYOUTS ── -->
+    <div id="panel-payouts" class="panel">
+      <div class="panel-title">Payout Management</div>
+
+      <div id="payout-alert"></div>
+
+      <div class="table-wrap" style="margin-bottom:24px">
+        <div class="table-head"><h3>Create New Payout</h3></div>
+        <div class="form-inline">
+          <div class="fi-field" style="min-width:180px">
+            <label>Agent Phone</label>
+            <input type="tel" id="po-phone" placeholder="08034129684">
+          </div>
+          <div class="fi-field" style="max-width:150px">
+            <label>Amount (₦)</label>
+            <input type="number" id="po-amount" placeholder="5000" min="5000">
+          </div>
+          <div class="fi-field" style="flex:2">
+            <label>Note (optional)</label>
+            <input type="text" id="po-note" placeholder="Bank transfer — UBA">
+          </div>
+          <div class="fi-field" style="justify-content:flex-end;flex:none">
+            <label>&nbsp;</label>
+            <button class="btn btn--primary" onclick="createPayout()">Create Payout</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <div class="table-head">
+          <h3>Payout History</h3>
+          <div style="display:flex;gap:8px">
+            <select id="po-filter" onchange="loadPayouts()" style="border:1px solid var(--border-2);padding:5px 10px;font-size:.8rem;font-family:var(--font);background:var(--surface);color:var(--text)">
+              <option value="pending">Pending</option>
+              <option value="">All</option>
+              <option value="paid">Paid</option>
+            </select>
+            <button class="btn btn--ghost btn--sm" onclick="loadPayouts()">Refresh</button>
+          </div>
+        </div>
+        <div style="overflow-x:auto">
+          <table>
+            <thead><tr><th>Agent</th><th>Phone</th><th>Amount</th><th>Status</th><th>Created</th><th>Paid</th><th></th></tr></thead>
+            <tbody id="payouts-body"><tr><td colspan="7" class="loading">Loading…</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /main-content -->
+</div><!-- /app -->
+
+<div id="toast"></div>
+
+<script>
+'use strict';
+
+var API    = 'https://YOUR_PROJECT_ID.supabase.co/functions/v1';
+var TOKEN  = ''; // Set below from ADMIN_SECRET
+// IMPORTANT: Replace this value with your ADMIN_SECRET
+// This is safe here because Cloudflare Access gates this page
+var ADMIN_SECRET_VALUE = 'REPLACE_WITH_YOUR_ADMIN_SECRET';
+var PANELS = ['dashboard','agents','payments','payouts'];
+
+function $(id) { return document.getElementById(id); }
+
+function fmt(n) {
+  return '₦' + Number(n || 0).toLocaleString('en-NG', { minimumFractionDigits: 0 });
+}
+function fmtDate(d) {
+  if (!d) return '—';
+  return new Date(d).toLocaleDateString('en-GB', { day:'2-digit', month:'short', year:'numeric' });
+}
+
+function toast(msg, type) {
+  var t = $('toast');
+  t.textContent = msg;
+  t.className   = 'show ' + (type || '');
+  clearTimeout(t._t);
+  t._t = setTimeout(function () { t.className = ''; }, 3500);
+}
+
+async function api(path, opts) {
+  opts = opts || {};
+  opts.headers = Object.assign({
+    'Content-Type': 'application/json',
+    'x-admin-secret': ADMIN_SECRET_VALUE
+  }, opts.headers || {});
+  var r = await fetch(API + path, opts);
+  if (r.status === 401) {
+    console.error('Admin secret mismatch — update ADMIN_SECRET_VALUE in admin.html');
+    return null;
+  }
+  return r;
+}
+
+/* ── Auth ─────────────────────────────────────────────────── */
+// Cloudflare Worker auth uses x-admin-secret header
+
+
+
+// doLogin removed: Cloudflare Access handles auth
+
+// doLogout removed: use Cloudflare Access logout URL
+
+/* ── Navigation ────────────────────────────────────────────── */
+function showPanel(id) {
+  PANELS.forEach(function (p) {
+    $('panel-' + p).classList.remove('active');
+    document.querySelectorAll('.sb-item').forEach(function (btn) { btn.classList.remove('active'); });
+  });
+  $('panel-' + id).classList.add('active');
+  document.querySelectorAll('.sb-item').forEach(function (btn) {
+    if (btn.textContent.trim().toLowerCase().includes(id)) btn.classList.add('active');
+  });
+
+  if (id === 'dashboard') loadDashboard();
+  if (id === 'agents')    loadAgents();
+  if (id === 'payments')  loadPayments();
+  if (id === 'payouts')   loadPayouts();
+}
+
+/* ── Dashboard ─────────────────────────────────────────────── */
+async function loadDashboard() {
+  var r = await api('/admin/dashboard');
+  if (!r || !r.ok) { toast('Failed to load dashboard', 'error'); return; }
+  var d = await r.json();
+
+  $('d-revenue').textContent     = fmt(d.totalRevenueNaira);
+  $('d-payments').textContent    = d.totalPayments;
+  $('d-agents').textContent      = d.totalAgents;
+  $('d-commissions').textContent = fmt(d.totalCommissionsNaira);
+
+  renderChart(d.monthly || []);
+  renderLeaderboard(d.leaderboard || []);
+}
+
+function renderChart(monthly) {
+  var chart = $('rev-chart');
+  if (!monthly.length) { chart.innerHTML = '<div class="loading">No revenue data yet</div>'; return; }
+  var max = Math.max.apply(null, monthly.map(function (m) { return m.revenueNaira; }));
+  chart.innerHTML = monthly.map(function (m) {
+    var pct = max > 0 ? Math.max(4, Math.round((m.revenueNaira / max) * 100)) : 4;
+    var mo  = esc(m.month.slice(5)); // MM
+    return '<div class="bar-col" title="' + fmt(m.revenueNaira) + ' — ' + m.payments + ' payment(s)">' +
+      '<div class="bar" style="height:' + pct + '%"></div>' +
+      '<div class="bar-label">' + mo + '</div>' +
+    '</div>';
+  }).join('');
+}
+
+function renderLeaderboard(agents) {
+  $('leaderboard-body').innerHTML = agents.length
+    ? agents.map(function (a, i) {
+        return '<tr>' +
+          '<td style="font-family:var(--mono);color:var(--accent);font-weight:700">' + (i+1) + '</td>' +
+          '<td><strong>' + esc(a.name) + '</strong></td>' +
+          '<td>' + esc(a.market) + '</td>' +
+          '<td>' + a.totalSales + '</td>' +
+          '<td style="font-family:var(--mono)">' + fmt(a.revenueNaira) + '</td>' +
+          '<td style="font-family:var(--mono);color:var(--green)">' + fmt(a.earningsNaira) + '</td>' +
+          '<td style="font-family:var(--mono)">' + fmt(a.balanceNaira) + '</td>' +
+        '</tr>';
+      }).join('')
+    : '<tr><td colspan="7" class="loading">No agents yet</td></tr>';
+}
+
+/* ── Agents ─────────────────────────────────────────────────── */
+async function loadAgents() {
+  var r = await api('/agents');
+  if (!r || !r.ok) { toast('Failed to load agents', 'error'); return; }
+  var agents = await r.json();
+
+  $('agents-body').innerHTML = agents.length
+    ? agents.map(function (a) {
+        return '<tr>' +
+          '<td><strong>' + esc(a.name) + '</strong></td>' +
+          '<td style="font-family:var(--mono)">' + a.phone + '</td>' +
+          '<td>' + esc(a.market) + '</td>' +
+          '<td>' + a.total_sales + '</td>' +
+          '<td style="font-family:var(--mono)">' + fmt(a.total_revenue_naira) + '</td>' +
+          '<td style="font-family:var(--mono)">' + fmt(a.balance_naira) + '</td>' +
+          '<td><span class="badge ' + (a.is_active ? 'badge--success' : 'badge--failed') + '">' +
+            (a.is_active ? 'Active' : 'Inactive') + '</span></td>' +
+          '<td><button class="btn btn--ghost btn--sm" onclick="toggleAgent(\'' + a.phone + '\',' + !a.is_active + ')">' +
+            (a.is_active ? 'Disable' : 'Enable') + '</button></td>' +
+        '</tr>';
+      }).join('')
+    : '<tr><td colspan="8" class="loading">No agents registered</td></tr>';
+}
+
+async function toggleAgent(phone, setActive) {
+  if (!confirm((setActive ? 'Enable' : 'Disable') + ' agent ' + phone + '?')) return;
+  try {
+    var r = await api('/agents/' + encodeURIComponent(phone) + '/status', {
+      method: 'PATCH', body: JSON.stringify({ is_active: setActive })
+    });
+    if (r && r.ok) { toast('Agent updated', 'success'); loadAgents(); }
+    else toast('Failed to update agent', 'error');
+  } catch (err) {
+    toast('Network error', 'error');
+  }
+}
+
+/* ── Payments ───────────────────────────────────────────────── */
+async function loadPayments() {
+  var status = $('pay-filter').value;
+  var url    = '/api/payments' + (status ? '?status=' + status : '');
+  var r = await api(url);
+  if (!r || !r.ok) { toast('Failed to load payments', 'error'); return; }
+  var rows = await r.json();
+
+  $('payments-body').innerHTML = rows.length
+    ? rows.map(function (p) {
+        return '<tr>' +
+          '<td style="font-family:var(--mono);font-size:.78rem">' + esc(p.reference).slice(0,20) + '…</td>' +
+          '<td>' + esc(p.email) + '</td>' +
+          '<td><strong>' + (p.plan === 'M' ? 'Micro' : p.plan === 'X' ? 'Medium' : 'Growth') + '</strong></td>' +
+          '<td style="font-family:var(--mono)">' + fmt(p.amount_naira) + '</td>' +
+          '<td>' + esc(p.agent_name || '—') + '</td>' +
+          '<td style="font-family:var(--mono);color:var(--green)">' + fmt(p.commission_naira) + '</td>' +
+          '<td><span class="badge badge--' + p.status + '">' + p.status + '</span></td>' +
+          '<td>' + fmtDate(p.created_at) + '</td>' +
+        '</tr>';
+      }).join('')
+    : '<tr><td colspan="8" class="loading">No payments found</td></tr>';
+}
+
+/* ── Payouts ────────────────────────────────────────────────── */
+async function loadPayouts() {
+  var status = $('po-filter').value;
+  var url    = '/api/admin/payouts' + (status ? '?status=' + status : '');
+  var r = await api(url);
+  if (!r || !r.ok) { toast('Failed to load payouts', 'error'); return; }
+  var rows = await r.json();
+
+  $('payouts-body').innerHTML = rows.length
+    ? rows.map(function (p) {
+        var isPending = p.status === 'pending';
+        return '<tr>' +
+          '<td><strong>' + esc(p.agent_name) + '</strong></td>' +
+          '<td style="font-family:var(--mono)">' + p.agent_phone + '</td>' +
+          '<td style="font-family:var(--mono)">' + fmt(p.amount_naira) + '</td>' +
+          '<td><span class="badge badge--' + p.status + '">' + p.status + '</span></td>' +
+          '<td>' + fmtDate(p.created_at) + '</td>' +
+          '<td>' + (p.paid_at ? fmtDate(p.paid_at) : '—') + '</td>' +
+          '<td>' + (isPending
+            ? '<button class="btn btn--green btn--sm" onclick="markPaid(' + p.id + ')">Mark Paid</button>'
+            : '') +
+          '</td>' +
+        '</tr>';
+      }).join('')
+    : '<tr><td colspan="7" class="loading">No payouts found</td></tr>';
+}
+
+async function createPayout() {
+  var phone  = $('po-phone').value.trim();
+  var amount = parseFloat($('po-amount').value);
+  var note   = $('po-note').value.trim();
+  var alertEl = $('payout-alert');
+  alertEl.innerHTML = '';
+
+  if (!phone || !amount || amount < 5000) {
+    alertEl.innerHTML = '<div class="alert alert--error">Agent phone and amount (min ₦5,000) are required.</div>';
+    return;
+  }
+
+  var r = await api('/admin/payouts', {
+    method: 'POST',
+    body: JSON.stringify({ agentPhone: phone, amount, note })
+  });
+  var data = await r.json();
+
+  if (!r || !r.ok) {
+    alertEl.innerHTML = '<div class="alert alert--error">' + esc(data.error || 'Failed to create payout') + '</div>';
+  } else {
+    toast('Payout of ' + fmt(data.amount_naira) + ' created', 'success');
+    $('po-phone').value  = '';
+    $('po-amount').value = '';
+    $('po-note').value   = '';
+    loadPayouts();
+  }
+}
+
+async function markPaid(id) {
+  if (!confirm('Mark this payout as paid?')) return;
+  try {
+    var r = await api('/admin/payouts/' + id + '/mark-paid', { method: 'PATCH', body: JSON.stringify({}) });
+    if (r && r.ok) { toast('Payout marked as paid', 'success'); loadPayouts(); }
+    else toast('Failed to mark payout as paid', 'error');
+  } catch (err) {
+    toast('Network error', 'error');
+  }
+}
+
+function esc(str) {
+  return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* ── Auto-login if token exists ─────────────────────────────── */
+(function init() {
+  // Cloudflare Access has already authenticated this user.
+  var app = $('app');
+  if (app) app.style.display = 'flex';
+  loadDashboard();
+})();
+</script>
+</body>
+</html>
