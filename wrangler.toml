@@ -8,7 +8,7 @@ compatibility_date = "2024-09-23"
 [[d1_databases]]
 binding       = "DB"
 database_name = "smartinvoice"
-database_id   = "PASTE_YOUR_D1_DATABASE_ID_HERE"
+database_id   = "32cb3466-9a63-48d7-be33-cf47962027aa"
 
 # ── R2 Storage ────────────────────────────────────────────────
 # Step 1: Run: wrangler r2 bucket create smartinvoice-files
@@ -24,7 +24,7 @@ bucket_name = "smartinvoice-files"
 FRONTEND_URL    = "https://smartinvoice.pages.dev"
 COMMISSION_RATE = "0.10"
 MIN_PAYOUT_KOBO = "500000"
-R2_PUBLIC_URL   = "https://pub-XXXX.r2.dev"
+R2_PUBLIC_URL   = "https://pub-9febe838f35e4d0180105acb28c867ab.r2.dev"
 # Replace pub-XXXX.r2.dev with your actual R2 public URL
 # Found in: R2 Dashboard → smartinvoice-files → Settings → Public Access
 
