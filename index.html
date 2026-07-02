@@ -14,7 +14,7 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#B83A09">
   <title>SmartInvoice Pro</title>
-  <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');:root{--accent:#B83A09;--accent-h:#96300a;--accent-tint:#fef3ee;--accent-bd:#f5cbb9;--bg:#ffffff;--surface:#ffffff;--surface-2:#fafafa;--surface-3:#f0f0f0;--text:#1c1c1e;--text-2:#636366;--text-3:#aeaeb2;--border:#e2e2e6;--border-2:#d0d0d5;--green:#1a7a1a;--green-bg:#edfaed;--green-bd:#b8e8b8;--amber:#9a5c00;--amber-bg:#fff8ec;--amber-bd:#f5d89a;--red:#c0392b;--red-bg:#fef2f2;--red-bd:#fca5a5;--blue:#1e50b4;--blue-bg:#eff4ff;--blue-bd:#adc4f7;--shadow-sm:0 1px 3px rgba(0,0,0,.06);--shadow:0 2px 8px rgba(0,0,0,.07),0 1px 3px rgba(0,0,0,.04);--shadow-md:0 4px 16px rgba(0,0,0,.09);--shadow-lg:0 8px 32px rgba(0,0,0,.11);--r:0px;--r-sm:0px;--tap:44px;--nav-brand-h:52px;--nav-tabs-h:42px;--nav-h:84px;--sidebar-w:200px;--font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;--font-serif:Georgia,'Times New Roman',serif;--font-mono:'SF Mono','Courier New',Courier,monospace}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{background:#ffffff;font-size:16px;-webkit-text-size-adjust:100%;touch-action:manipulation;scroll-behavior:smooth}body{font-family:var(--font-sans);background:#ffffff;color:var(--text);min-height:100dvh;overflow-x:hidden;padding-top:env(safe-area-inset-top);padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);-webkit-overflow-scrolling:touch;-webkit-tap-highlight-color:transparent}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}img{max-width:100%;display:block}input,select,textarea,button{font-family:var(--font-sans);font-size:16px;border:none;outline:none;background:none;-webkit-tap-highlight-color:transparent}button{cursor:pointer;touch-action:manipulation}button:active{opacity:.85}#app-shell{display:flex;flex-direction:column;min-height:100dvh}#topbar{position:sticky;top:0;z-index:100;background:var(--surface);border-bottom:2px solid var(--accent);box-shadow:var(--shadow);flex-shrink:0}.topbar__brand-row{display:flex;align-items:center;padding:0 16px;height:var(--nav-brand-h);border-bottom:1px solid var(--border)}.topbar__brand{font-family:var(--font-serif);display:inline-flex;flex-direction:column;line-height:1.05;user-select:none;letter-spacing:-.01em}.topbar__brand-line1{display:block}.topbar__brand-line2{display:flex;align-items:baseline;gap:4px}.topbar__brand-word{font-size:1.1rem;font-weight:700;color:var(--text)}.topbar__brand-accent{font-size:1.1rem;font-weight:700;color:var(--accent)}.topbar__brand-pro{font-size:.72rem;font-weight:600;color:var(--text);letter-spacing:.04em;text-transform:uppercase}.topbar__tabs{display:flex;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;height:var(--nav-tabs-h)}.topbar__tabs::-webkit-scrollbar{display:none}.nav__tab{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;height:var(--nav-tabs-h);padding:0 12px;border-radius:0;font-size:.78rem;font-weight:500;color:var(--text-2);background:var(--surface);border:none;border-right:1px solid var(--border);white-space:nowrap;user-select:none;-webkit-tap-highlight-color:transparent;transition:background .14s,color .14s}.nav__tab:last-child{border-right:none}.nav__tab:hover{background:var(--accent-tint);color:var(--accent)}.nav__tab:active{background:var(--accent-tint)}.nav__tab--active{background:var(--accent) !important;color:#fff !important;font-weight:700;border-right-color:var(--accent-h)}#main-content{flex:1;overflow-y:auto;overflow-x:hidden;padding:20px 16px;padding-bottom:calc(20px+env(safe-area-inset-bottom));-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain}@media (min-width:768px){#app-shell{flex-direction:row}#topbar{position:fixed;top:env(safe-area-inset-top);left:env(safe-area-inset-left);bottom:0;width:var(--sidebar-w);height:auto;min-height:100dvh;border-bottom:none;border-right:2px solid var(--accent);flex-direction:column;align-items:stretch;overflow:hidden}.topbar__brand-row{height:56px;padding:0 14px;border-bottom:1px solid var(--border);flex-shrink:0}.topbar__tabs{flex-direction:column;height:auto;overflow-x:hidden;overflow-y:auto;flex:1}.nav__tab{width:100%;flex:none;height:var(--tap);justify-content:flex-start;padding:0 16px;font-size:.875rem;border-right:none;border-bottom:1px solid var(--border)}.nav__tab:last-child{border-bottom:none}.nav__tab--active{border-bottom-color:var(--accent-h)}#main-content{margin-left:var(--sidebar-w);padding:28px 32px;padding-bottom:calc(28px+env(safe-area-inset-bottom))}}@media (min-width:768px) and (max-height:480px){#app-shell{flex-direction:column}#topbar{position:sticky;top:0;left:0;bottom:auto;width:100%;height:auto;min-height:auto;border-right:none;border-bottom:2px solid var(--accent);flex-direction:column}.topbar__tabs{flex-direction:row;overflow-x:auto;height:var(--nav-tabs-h)}.nav__tab{flex:1;height:var(--nav-tabs-h);justify-content:center;padding:0 10px;font-size:.75rem;border-right:1px solid var(--border);border-bottom:none}#main-content{margin-left:0;padding:14px 16px}}@media (min-width:1024px){:root{--sidebar-w:220px}#main-content{padding:32px 40px}}#demo-banner{display:none;align-items:center;justify-content:center;background:#B83A09;padding:10px 16px;font-size:.82rem;font-weight:700;color:#fff;letter-spacing:.01em;position:sticky;top:var(--nav-h);z-index:90;text-align:center}.demo-banner__text{flex:1}.demo-banner__link{color:#fff;font-weight:800;text-decoration:underline;text-underline-offset:2px}.demo-banner__link:hover{opacity:.85}.screen{display:none}h1,h2{font-family:var(--font-serif);font-weight:700;line-height:1.2}h1{font-size:1.5rem;margin-bottom:18px}h2{font-size:1.2rem;margin-bottom:14px}h3{font-size:.95rem;font-weight:600;margin-bottom:8px}.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:10px}.page-header h2{margin-bottom:0}.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px}.section-head h2,.section-head h3{margin-bottom:0}.section-title{font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-2);margin:22px 0 10px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:var(--tap);padding:0 18px;border-radius:0;font-size:.875rem;font-weight:600;cursor:pointer;border:1px solid transparent;white-space:nowrap;user-select:none;-webkit-tap-highlight-color:transparent;transition:background .14s,color .14s,border-color .14s}.btn:active{opacity:.85;transform:scale(.98)}.btn--primary{background:var(--accent);color:#fff}.btn--primary:hover{background:var(--accent-h)}.btn--ghost{background:var(--surface);color:var(--text);border-color:var(--border-2)}.btn--ghost:hover{background:var(--surface-2)}.btn--danger{color:var(--red);border-color:var(--red-bd);background:transparent}.btn--danger:hover{background:var(--red-bg)}.btn--sm{height:36px;padding:0 12px;font-size:.8rem}@media(max-width:430px){.btn--sm{height:40px;font-size:.82rem}}.btn--block{display:flex;width:100%}.btn--icon{height:34px;width:34px;padding:0;font-size:1rem}.btn--del{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border:none;border-radius:0;background:var(--red-bg);color:var(--red);font-size:.9rem;cursor:pointer;flex-shrink:0}.btn--del:active{background:var(--red);color:#fff}.form-section{background:var(--surface);border:1px solid var(--border);border-radius:0;padding:18px 16px;margin-bottom:12px;box-shadow:var(--shadow-sm)}.form-row{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}.form-row:last-child{margin-bottom:0}.form-row label{font-size:.75rem;font-weight:700;color:var(--text-2);text-transform:uppercase;letter-spacing:.05em}.form-row input,.form-row select,.form-row textarea,.form-input,.search-inp{width:100%;background:var(--surface);border:1.5px solid var(--border-2);border-radius:0;padding:10px 12px;color:var(--text);font-size:16px;font-family:var(--font-sans);min-height:var(--tap);transition:border-color .14s;-webkit-appearance:none;appearance:none}.form-row input:focus,.form-row select:focus,.form-row textarea:focus,.form-input:focus,.search-inp:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px rgba(184,58,9,.08)}.form-row textarea{resize:vertical;min-height:80px}.form-row select,select.form-input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23636366'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}@media (max-width:380px){.form-grid{grid-template-columns:1fr}}.toggle-label{display:flex;align-items:center;gap:10px;font-size:.9rem;cursor:pointer;color:var(--text);min-height:var(--tap);padding:4px 0}.toggle-label input[type="checkbox"]{width:20px;height:20px;accent-color:var(--accent);flex-shrink:0}.form-actions{display:flex;gap:8px;flex-wrap:wrap;padding-top:8px}.form-sticky-bar{position:fixed;bottom:0;left:0;right:0;z-index:50;background:var(--surface);border-top:2px solid var(--accent);padding:10px 16px calc(10px+env(safe-area-inset-bottom)) 16px;box-shadow:0 -4px 16px rgba(0,0,0,.08);display:flex;flex-direction:column;gap:8px;padding-left:calc(16px+env(safe-area-inset-left));padding-right:calc(16px+env(safe-area-inset-right))}@media (min-width:768px) and (min-height:481px){.form-sticky-bar{left:var(--sidebar-w)}}.form-sticky-bar .btn--block{height:50px;font-size:1rem}.form-sticky-bar__row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.form-sticky-bar__row2 .btn{width:100%;justify-content:center}.item-cols-header{display:grid;grid-template-columns:1fr 50px 70px 56px 32px;gap:5px;padding:0 2px 6px 2px;border-bottom:1px solid var(--border);margin-bottom:8px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text-3)}.form-item-row{display:grid;grid-template-columns:1fr 50px 70px 56px 32px;gap:5px;margin-bottom:8px;align-items:center}@media (max-width:360px){.item-cols-header,.form-item-row{grid-template-columns:1fr 42px 64px 48px 28px;gap:3px}}.form-item-row input{padding:8px 6px;font-size:16px;min-height:40px;background:var(--surface);border:1.5px solid var(--border-2);border-radius:0;color:var(--text);width:100%;-webkit-appearance:none}.form-item-row input:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px rgba(184,58,9,.08)}.item-sub{font-family:var(--font-mono);font-size:.78rem;font-weight:700;color:var(--accent);text-align:right;white-space:nowrap}.badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:0;font-size:.72rem;font-weight:700;white-space:nowrap;user-select:none;border-width:1px;border-style:solid}.badge__dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}.badge--green{background:var(--green-bg);color:var(--green);border-color:var(--green-bd)}.badge--green .badge__dot{background:var(--green)}.badge--orange,.badge--amber{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-bd)}.badge--orange .badge__dot,.badge--amber .badge__dot{background:var(--amber)}.badge--red{background:var(--red-bg);color:var(--red);border-color:var(--red-bd)}.badge--red .badge__dot{background:var(--red)}.badge--blue{background:var(--blue-bg);color:var(--blue);border-color:var(--blue-bd)}.badge--blue .badge__dot{background:var(--blue)}.badge--grey{background:var(--surface-3);color:var(--text-2);border-color:var(--border-2)}.badge--grey .badge__dot{background:var(--text-2)}#toast{position:fixed;bottom:calc(20px+env(safe-area-inset-bottom));left:50%;transform:translateX(-50%) translateY(80px);opacity:0;background:var(--text);color:var(--surface);padding:11px 20px;border-radius:0;font-size:.86rem;font-weight:500;max-width:min(86vw,380px);text-align:center;z-index:9999;pointer-events:none;box-shadow:var(--shadow-md);transition:transform .25s cubic-bezier(.34,1.4,.64,1),opacity .25s}#toast.toast--show{transform:translateX(-50%) translateY(0);opacity:1}#toast.toast--error{background:var(--red);color:#fff}#toast.toast--warn{background:var(--amber);color:#fff}#toast.toast--success{background:var(--green);color:#fff}.dash-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}@media (min-width:640px){.dash-grid{grid-template-columns:repeat(4,1fr)}}.dash-card{background:var(--surface);border:1px solid var(--border);border-radius:0;padding:16px;box-shadow:var(--shadow-sm)}.dash-card--alert{border-color:var(--red-bd);background:var(--red-bg)}.dash-card__label{font-size:.7rem;font-weight:700;color:var(--text-2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}.dash-card__value{font-family:var(--font-mono);font-size:1.3rem;font-weight:700;color:var(--text)}.dash-card--alert .dash-card__value{color:var(--red)}.overdue-alert{background:var(--red-bg);border:1px solid var(--red-bd);padding:10px 14px;font-size:.875rem;color:var(--red);margin-bottom:16px;display:flex;align-items:center;gap:8px}.overdue-alert a{color:var(--red);font-weight:700}.demo-dash-card{margin-bottom:14px}.demo-progress__track{background:var(--surface-3);height:6px;margin:6px 0 3px;overflow:hidden}.demo-progress__bar{background:var(--accent);height:6px;transition:width .3s}.demo-progress__label{font-size:.75rem;color:var(--text-2)}.onboarding-card{background:var(--surface);border:2px solid var(--accent-bd);padding:18px;margin-bottom:18px}.onboarding-progress{background:var(--surface-3);height:4px;margin-bottom:12px;overflow:hidden}.onboarding-progress__bar{background:var(--accent);height:4px;transition:width .3s}.onboarding-list{list-style:none}.onboarding-step{font-size:.86rem;color:var(--text-2);padding:5px 0;display:flex;align-items:center;gap:8px}.onboarding-step--done{color:var(--green)}.hist-controls{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;align-items:center}.filter-tabs{display:flex;gap:0;flex-wrap:wrap}.filter-tab{display:inline-flex;align-items:center;height:34px;padding:0 12px;border-radius:0;font-size:.78rem;font-weight:600;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;background:var(--surface);border:1px solid var(--border-2);color:var(--text-2);margin-right:-1px;transition:background .14s,color .14s}.filter-tab:hover{background:var(--accent-tint);color:var(--accent);z-index:1}.filter-tab:active{opacity:.85}.filter-tab--active{background:var(--accent);color:#fff;border-color:var(--accent);z-index:2}.sort-sel{height:36px;border:1px solid var(--border-2);border-radius:0;background:var(--surface);color:var(--text);font-size:.85rem;padding:0 28px 0 10px;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23636366'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center}.search-inp{height:40px;flex:1;min-width:130px;background:var(--surface);border:1.5px solid var(--border-2);border-radius:0;padding:0 12px;color:var(--text);font-size:16px;-webkit-appearance:none}.search-inp:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px rgba(184,58,9,.08)}.inv-list{display:flex;flex-direction:column;gap:8px}.inv-item{background:var(--surface);border:1px solid var(--border);border-radius:0;padding:14px;cursor:pointer;transition:box-shadow .14s,border-color .14s;user-select:none;-webkit-tap-highlight-color:transparent}.inv-item:hover{box-shadow:var(--shadow-md);border-color:var(--accent-bd)}.inv-item:active{opacity:.95}.inv-item--overdue{border-left:3px solid var(--red)}.inv-item__head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}.inv-item__id{font-family:var(--font-mono);font-size:.8rem;font-weight:700;color:var(--accent)}.inv-item__cust{font-size:.95rem;font-weight:600;margin-bottom:6px}.inv-item__row{display:flex;justify-content:space-between;align-items:center}.inv-item__amount{font-family:var(--font-mono);font-size:.9rem;font-weight:700}.inv-item__date{font-size:.8rem;color:var(--text-2)}.inv-item__overdue{font-size:.75rem;color:var(--red);font-weight:700;margin-top:4px}.inv-item__actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}.inv-view-toolbar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border);align-items:center}.inv-view-toolbar .btn--primary{margin-left:auto}.inv-doc{background:var(--surface);border:1px solid var(--border);border-radius:0;padding:24px 20px;max-width:700px;position:relative;overflow:hidden;box-shadow:var(--shadow)}@media (min-width:640px){.inv-doc{padding:32px 28px}}.inv-logo{max-height:72px;max-width:200px;margin-bottom:10px}.inv-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:18px}.inv-biz__name{font-family:var(--font-serif);font-size:1.1rem;font-weight:700;color:var(--accent)}.inv-biz__addr,.inv-biz__phone,.inv-biz__email{font-size:.8rem;color:var(--text-2);margin-top:2px}.inv-title-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.inv-title{font-family:var(--font-serif);font-size:1.35rem;font-weight:700}.inv-meta-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;background:var(--surface-2);padding:14px;margin-bottom:18px;font-size:.84rem}.inv-meta-grid b{display:block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text-2);margin-bottom:2px}.inv-table{width:100%;border-collapse:collapse;margin-bottom:16px;font-size:.86rem}.inv-table th{text-align:left;padding:8px 6px;background:var(--surface-2);border-bottom:2px solid var(--border);font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--text-2)}.inv-table td{padding:9px 6px;border-bottom:1px solid var(--border)}.inv-table td:last-child,.inv-table th:last-child{text-align:right}.inv-totals{margin-left:auto;max-width:280px;margin-bottom:18px}.totals-row{display:flex;justify-content:space-between;padding:5px 0;font-size:.875rem;border-bottom:1px dashed var(--border)}.totals-row--grand{font-weight:800;font-size:1.05rem;border-bottom:2px solid var(--accent);color:var(--accent);padding:8px 0;margin-top:4px}.totals-row--bal{font-weight:700;color:var(--red)}.bank-block{background:var(--surface-2);border:1px solid var(--border);padding:12px 14px;font-size:.875rem;margin-bottom:14px;line-height:1.75}.nqr-img{width:88px;height:88px;border:1px solid var(--border)}.ins-plan{background:var(--blue-bg);border:1px solid var(--blue-bd);padding:12px 14px;font-size:.875rem;margin-bottom:14px;color:var(--blue);line-height:1.8}.void-note{background:var(--red-bg);color:var(--red);padding:9px 13px;font-size:.82rem;margin-bottom:12px}.void-stamp,.unpaid-stamp{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-25deg);font-family:var(--font-serif);font-size:5rem;font-weight:900;letter-spacing:.1em;opacity:.055;pointer-events:none;z-index:0;user-select:none}.void-stamp{color:var(--red)}.unpaid-stamp{color:#888}.inv-sig-block img{max-height:64px;max-width:160px}.inv-sig-label{font-size:.72rem;color:var(--text-2);margin-top:4px;border-top:1px solid var(--border);padding-top:4px;width:160px}.inv-remark{font-size:.875rem;color:var(--text-2);margin-bottom:12px;line-height:1.6}.inv-thankyou{font-style:italic;font-size:.875rem;color:var(--text-2);margin-bottom:12px}.inv-footer{font-size:.7rem;color:var(--text-3);text-align:center;margin-top:18px;padding-top:12px;border-top:1px solid var(--border);line-height:1.8}.pay-section,.pay-hist{background:var(--surface);border:1px solid var(--border);padding:18px 16px;margin-top:16px;max-width:700px}.pay-entry{font-size:.82rem;padding:7px 0;border-bottom:1px solid var(--border);color:var(--text-2);font-family:var(--font-mono)}.pay-entry:last-child{border-bottom:none}.report-tabs{display:flex;gap:0;margin-bottom:18px}#rev-chart{display:block;width:100%;height:200px;background:var(--surface);border:1px solid var(--border);margin-bottom:20px}.top5-grid{display:grid;grid-template-columns:1fr;gap:14px}@media (min-width:600px){.top5-grid{grid-template-columns:1fr 1fr}}.top5-card{background:var(--surface);border:1px solid var(--border);padding:18px 16px}.top5-title{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-2);margin-bottom:14px}.top5-item{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--border)}.top5-item:last-child{border-bottom:none}.top5-rank{font-family:var(--font-mono);font-size:.75rem;font-weight:700;color:var(--accent);width:18px;text-align:center;flex-shrink:0}.top5-info{flex:1;min-width:0}.top5-name{font-size:.875rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:4px}.top5-bar-wrap{height:4px;background:var(--surface-3);overflow:hidden}.top5-bar{height:4px;background:var(--accent);transition:width .4s ease}.top5-val{font-family:var(--font-mono);font-size:.8rem;font-weight:700;color:var(--accent);white-space:nowrap;flex-shrink:0}.cat-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--border)}.cat-item{background:var(--surface);border-bottom:1px solid var(--border);padding:12px 14px;display:flex;align-items:center;gap:10px;min-height:var(--tap)}.cat-item:last-child{border-bottom:none}.cat-item__name{font-weight:600;flex:1;font-size:.9rem}.cat-item__price{font-family:var(--font-mono);font-size:.9rem;color:var(--accent);font-weight:700;flex-shrink:0}.cat-item__actions{display:flex;gap:6px;flex-shrink:0}.cu-list{display:flex;flex-direction:column;gap:8px}.cu-item{background:var(--surface);border:1px solid var(--border);padding:16px}.cu-item__name{font-weight:700;font-size:.95rem}.cu-item__phone{font-size:.85rem;color:var(--text-2);margin-top:2px}.cu-item__stats{font-size:.8rem;color:var(--text-3);margin:6px 0}.cu-item__actions{display:flex;gap:6px;margin-top:8px}.sub-tabs{display:flex;gap:0;flex-wrap:wrap;margin-bottom:20px;border-bottom:2px solid var(--accent)}.sub-tab{display:inline-flex;align-items:center;height:38px;padding:0 14px;border-radius:0;font-size:.82rem;font-weight:600;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;background:var(--surface);border:1px solid var(--border-2);border-bottom:none;color:var(--text-2);margin-right:-1px;transition:background .14s,color .14s}.sub-tab:hover{background:var(--accent-tint);color:var(--accent)}.sub-tab:active{opacity:.85}.sub-tab--active{background:var(--accent) !important;color:#fff !important;border-color:var(--accent) !important;z-index:1}.settings-section{background:var(--surface);border:1px solid var(--border);border-radius:0;padding:18px 16px;margin-bottom:14px}.settings-section h3{margin-bottom:14px}.settings-hint{font-size:.875rem;color:var(--text-2);margin-bottom:10px;line-height:1.5}.thumb{width:68px;height:68px;object-fit:contain;border:1px solid var(--border);margin-top:8px;background:var(--surface-2)}.audit-log{max-height:300px;overflow-y:auto}.audit-entry{font-size:.78rem;padding:6px 0;border-bottom:1px solid var(--border);color:var(--text-2)}.audit-entry:last-child{border-bottom:none}.audit-time{font-family:var(--font-mono);color:var(--text-3)}.audit-action{font-weight:600}.ip-notice{background:var(--surface-2);border:1px solid var(--border);padding:14px 16px;font-size:.78rem;color:var(--text-2);line-height:1.75;margin-top:10px}.ip-notice strong{color:var(--text)}.copyright-badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-tint);border:1px solid var(--accent-bd);padding:5px 12px;font-size:.75rem;font-weight:700;color:var(--accent);margin-bottom:8px}.biz-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--border)}.biz-item{background:var(--surface);border-bottom:1px solid var(--border);padding:14px;display:flex;align-items:center;gap:12px;min-height:var(--tap)}.biz-item:last-child{border-bottom:none}.biz-item--active{border-left:3px solid var(--accent);background:var(--accent-tint)}.biz-item__name{font-weight:700;flex:1}.biz-item__phone{font-size:.85rem;color:var(--text-2)}.biz-item__actions{display:flex;gap:6px;flex-shrink:0}.upgrade-notice{background:var(--surface);border:1px solid var(--border);padding:36px 24px;text-align:center}.pricing-grid{display:grid;grid-template-columns:1fr;gap:12px}@media (min-width:600px){.pricing-grid{grid-template-columns:repeat(3,1fr)}}.pricing-card{background:var(--surface);border:1px solid var(--border);padding:20px 16px;position:relative;display:flex;flex-direction:column;gap:8px}.pricing-card--featured{border:2px solid var(--accent)}.pricing-badge{position:absolute;top:-1px;right:12px;background:var(--accent);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px}.pricing-tier{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-2)}.pricing-price{font-family:var(--font-serif);font-size:1.6rem;font-weight:700;color:var(--text);line-height:1.1}.pricing-per{font-size:.75rem;font-weight:400;color:var(--text-2);margin-left:2px}.pricing-grace{font-size:.8rem;color:var(--text-2);padding-bottom:10px;border-bottom:1px solid var(--border)}.pricing-features{list-style:none;padding:0;font-size:.84rem;color:var(--text-2);display:flex;flex-direction:column;gap:5px;flex:1;margin-bottom:12px}.pricing-features li::before{content:"\2713 ";color:var(--green);font-weight:700}#demo-wall{display:none;position:fixed;inset:0;z-index:5000;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:20px;padding-bottom:calc(20px+env(safe-area-inset-bottom))}#demo-wall.demo-wall--show{display:flex}.demo-wall__card{background:var(--surface);border:2px solid var(--accent);padding:32px 24px;max-width:420px;width:100%;text-align:center}.demo-wall__icon{font-size:2.5rem;margin-bottom:10px}.demo-wall__title{font-family:var(--font-serif);font-size:1.3rem;font-weight:700;margin-bottom:8px}.demo-wall__sub{font-size:.9rem;color:var(--text-2);margin-bottom:22px;line-height:1.5}.demo-wall__steps{text-align:left;margin-bottom:22px}.demo-wall__step{display:flex;align-items:flex-start;gap:12px;padding:9px 0;border-bottom:1px solid var(--border);font-size:.86rem;color:var(--text-2);line-height:1.5}.demo-wall__step:last-child{border-bottom:none}.demo-wall__step b{color:var(--text)}.demo-wall__step-num{background:var(--accent);color:#fff;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0}.demo-wall__actions{display:flex;flex-direction:column;gap:10px}#activation-modal{display:none;position:fixed;inset:0;z-index:6000;background:rgba(255,255,255,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px}#activation-modal.modal--show{display:flex}.modal__card{background:var(--surface);border:2px solid var(--border-2);padding:28px 24px;max-width:400px;width:100%}.modal__title{font-family:var(--font-serif);font-size:1.2rem;font-weight:700;margin-bottom:6px}.modal__sub{font-size:.85rem;color:var(--text-2);margin-bottom:18px;line-height:1.5}.modal__close{float:right;width:28px;height:28px;background:var(--surface-3);color:var(--text-2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.9rem;cursor:pointer}#pin-wall{display:none;position:fixed;inset:0;z-index:7000;background:#ffffff;align-items:center;justify-content:center;flex-direction:column;padding:20px;padding-bottom:calc(20px+env(safe-area-inset-bottom));padding-top:calc(20px+env(safe-area-inset-top))}.pin-card{background:var(--surface);border:2px solid var(--border-2);padding:32px 28px;max-width:340px;width:100%;text-align:center}.pin-card__brand{font-family:var(--font-serif);font-size:.85rem;color:var(--accent);font-weight:700;margin-bottom:4px}.pin-card__title{font-family:var(--font-serif);font-size:1.2rem;font-weight:700;margin-bottom:4px}.pin-card__sub{font-size:.82rem;color:var(--text-2);margin-bottom:24px}.pin-card__dots{display:flex;gap:14px;justify-content:center;margin-bottom:24px}.pin-dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--border-2);background:var(--bg);transition:background .1s}.pin-dot--filled{background:var(--accent);border-color:var(--accent)}.pin-pad{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.pin-key{display:flex;align-items:center;justify-content:center;height:56px;border:1px solid var(--border-2);border-radius:0;background:var(--surface-2);color:var(--text);font-size:1.2rem;font-weight:700;cursor:pointer;user-select:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent;transition:background .1s}.pin-key:active{background:var(--accent);color:#fff;border-color:var(--accent)}.pin-key--clear{font-size:.9rem;font-weight:600;color:var(--text-2)}.empty-state{text-align:center;padding:48px 20px;color:var(--text-2);font-size:.9rem;line-height:1.6}.doc-type-tabs{display:flex;gap:0;flex-wrap:wrap;margin-bottom:4px}.doc-tab{display:inline-flex;align-items:center;height:36px;padding:0 16px;border-radius:0;font-size:.86rem;font-weight:600;cursor:pointer;-webkit-tap-highlight-color:transparent;background:var(--surface);border:1px solid var(--border-2);color:var(--text-2);margin-right:-1px;transition:background .14s,color .14s}.doc-tab:active{opacity:.85}.doc-tab--active{background:var(--accent);color:#fff;border-color:var(--accent);z-index:1}@media print{.no-print,#topbar,#demo-banner,#toast,#demo-wall,#activation-modal,#pin-wall,.inv-view-toolbar,.form-sticky-bar{display:none !important}body{background:white;color:black;padding:0}#main-content{margin:0;padding:0}.inv-doc{border:none;box-shadow:none;padding:0}@page{margin:1.5cm}}.item-type-toggle{display:flex;gap:0;grid-column:1 / -1;margin-bottom:6px}.item-type-btn{flex:1;height:28px;font-size:.72rem;font-weight:600;cursor:pointer;background:var(--surface-2);border:1px solid var(--border-2);color:var(--text-2);margin-right:-1px;transition:background .12s,color .12s}.item-type-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);z-index:1}.item-type-btn:first-child{border-radius:0}.item-type-btn:last-child{border-radius:0}.form-item-row{display:grid;grid-template-columns:1fr 50px 70px 56px 32px;gap:5px;margin-bottom:12px;align-items:center}.form-item-row .item-type-toggle{grid-column:1 / -1;margin-bottom:4px}.help-section__head{display:flex;align-items:center;cursor:pointer;padding:4px 0;user-select:none}.help-section__head:hover .help-chevron{color:var(--accent)}.help-chevron{font-size:1.2rem;color:var(--text-3);transition:transform .2s;flex-shrink:0}.help-section__body{font-size:.875rem;color:var(--text-2);line-height:1.75;padding-top:12px;padding-left:2px;border-top:1px solid var(--border);margin-top:10px}.help-section__body b{color:var(--text)}.help-section__body a{color:var(--accent)}</style>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');:root{--accent:#B83A09;--accent-h:#96300a;--accent-tint:#fef3ee;--accent-bd:#f5cbb9;--bg:#ffffff;--surface:#ffffff;--surface-2:#fafafa;--surface-3:#f0f0f0;--text:#1c1c1e;--text-2:#636366;--text-3:#aeaeb2;--border:#e2e2e6;--border-2:#d0d0d5;--green:#1a7a1a;--green-bg:#edfaed;--green-bd:#b8e8b8;--amber:#9a5c00;--amber-bg:#fff8ec;--amber-bd:#f5d89a;--red:#c0392b;--red-bg:#fef2f2;--red-bd:#fca5a5;--blue:#1e50b4;--blue-bg:#eff4ff;--blue-bd:#adc4f7;--shadow-sm:0 1px 3px rgba(0,0,0,.06);--shadow:0 2px 8px rgba(0,0,0,.07),0 1px 3px rgba(0,0,0,.04);--shadow-md:0 4px 16px rgba(0,0,0,.09);--shadow-lg:0 8px 32px rgba(0,0,0,.11);--r:0px;--r-sm:0px;--tap:44px;--nav-brand-h:52px;--nav-tabs-h:42px;--nav-h:84px;--sidebar-w:200px;--font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;--font-serif:Georgia,'Times New Roman',serif;--font-mono:'SF Mono','Courier New',Courier,monospace}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{background:#ffffff;font-size:16px;-webkit-text-size-adjust:100%;touch-action:manipulation;scroll-behavior:smooth}body{font-family:var(--font-sans);background:#ffffff;color:var(--text);min-height:100dvh;overflow-x:hidden;padding-top:env(safe-area-inset-top);padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);-webkit-overflow-scrolling:touch;-webkit-tap-highlight-color:transparent}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}img{max-width:100%;display:block}input,select,textarea,button{font-family:var(--font-sans);font-size:16px;border:none;outline:none;background:none;-webkit-tap-highlight-color:transparent}button{cursor:pointer;touch-action:manipulation}button:active{opacity:.85}#app-shell{display:flex;flex-direction:column;min-height:100dvh}#topbar{position:sticky;top:0;z-index:100;background:var(--surface);border-bottom:2px solid var(--accent);box-shadow:var(--shadow);flex-shrink:0}.topbar__brand-row{display:flex;align-items:center;padding:0 16px;height:var(--nav-brand-h);border-bottom:1px solid var(--border)}.topbar__brand{font-family:var(--font-serif);display:inline-flex;flex-direction:column;line-height:1.05;user-select:none;letter-spacing:-.01em}.topbar__brand-line1{display:block}.topbar__brand-line2{display:flex;align-items:baseline;gap:4px}.topbar__brand-word{font-size:1.1rem;font-weight:700;color:var(--text)}.topbar__brand-accent{font-size:1.1rem;font-weight:700;color:var(--accent)}.topbar__brand-pro{font-size:.72rem;font-weight:600;color:var(--text);letter-spacing:.04em;text-transform:uppercase}.topbar__tabs{display:flex;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;height:var(--nav-tabs-h)}.topbar__tabs::-webkit-scrollbar{display:none}.nav__tab{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;height:var(--nav-tabs-h);padding:0 12px;border-radius:0;font-size:.78rem;font-weight:500;color:var(--text-2);background:var(--surface);border:none;border-right:1px solid var(--border);white-space:nowrap;user-select:none;-webkit-tap-highlight-color:transparent;transition:background .14s,color .14s}.nav__tab:last-child{border-right:none}.nav__tab:hover{background:var(--accent-tint);color:var(--accent)}.nav__tab:active{background:var(--accent-tint)}.nav__tab--active{background:var(--accent) !important;color:#fff !important;font-weight:700;border-right-color:var(--accent-h)}#main-content{flex:1;overflow-y:auto;overflow-x:hidden;padding:20px 16px;padding-bottom:calc(20px+env(safe-area-inset-bottom));-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain}@media (min-width:768px){#app-shell{flex-direction:row}#topbar{position:fixed;top:0;left:0;bottom:0;width:var(--sidebar-w);height:auto;min-height:100dvh;border-bottom:none;border-right:2px solid var(--accent);flex-direction:column;align-items:stretch;overflow:hidden;padding-top:env(safe-area-inset-top);padding-left:env(safe-area-inset-left)}.topbar__brand-row{height:56px;padding:0 14px;border-bottom:1px solid var(--border);flex-shrink:0}.topbar__tabs{flex-direction:column;height:auto;overflow-x:hidden;overflow-y:auto;flex:1}.nav__tab{width:100%;flex:none;height:var(--tap);justify-content:flex-start;padding:0 16px;font-size:.875rem;border-right:none;border-bottom:1px solid var(--border)}.nav__tab:last-child{border-bottom:none}.nav__tab--active{border-bottom-color:var(--accent-h)}#main-content{margin-left:var(--sidebar-w);padding:28px 32px;padding-bottom:calc(28px+env(safe-area-inset-bottom))}}@media (min-width:768px) and (max-height:480px){#app-shell{flex-direction:column}#topbar{position:sticky;top:0;left:0;bottom:auto;width:100%;height:auto;min-height:auto;border-right:none;border-bottom:2px solid var(--accent);flex-direction:column}.topbar__tabs{flex-direction:row;overflow-x:auto;height:var(--nav-tabs-h)}.nav__tab{flex:1;height:var(--nav-tabs-h);justify-content:center;padding:0 10px;font-size:.75rem;border-right:1px solid var(--border);border-bottom:none}#main-content{margin-left:0;padding:14px 16px}}@media (min-width:1024px){:root{--sidebar-w:220px}#main-content{padding:32px 40px}}#demo-banner{display:none;align-items:center;justify-content:center;background:#B83A09;padding:10px 16px;font-size:.82rem;font-weight:700;color:#fff;letter-spacing:.01em;position:sticky;top:var(--nav-h);z-index:90;text-align:center}.demo-banner__text{flex:1}.demo-banner__link{color:#fff;font-weight:800;text-decoration:underline;text-underline-offset:2px}.demo-banner__link:hover{opacity:.85}.screen{display:none}h1,h2{font-family:var(--font-serif);font-weight:700;line-height:1.2}h1{font-size:1.5rem;margin-bottom:18px}h2{font-size:1.2rem;margin-bottom:14px}h3{font-size:.95rem;font-weight:600;margin-bottom:8px}.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:10px}.page-header h2{margin-bottom:0}.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px}.section-head h2,.section-head h3{margin-bottom:0}.section-title{font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-2);margin:22px 0 10px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:var(--tap);padding:0 18px;border-radius:0;font-size:.875rem;font-weight:600;cursor:pointer;border:1px solid transparent;white-space:nowrap;user-select:none;-webkit-tap-highlight-color:transparent;transition:background .14s,color .14s,border-color .14s}.btn:active{opacity:.85;transform:scale(.98)}.btn--primary{background:var(--accent);color:#fff}.btn--primary:hover{background:var(--accent-h)}.btn--ghost{background:var(--surface);color:var(--text);border-color:var(--border-2)}.btn--ghost:hover{background:var(--surface-2)}.btn--danger{color:var(--red);border-color:var(--red-bd);background:transparent}.btn--danger:hover{background:var(--red-bg)}.btn--sm{height:36px;padding:0 12px;font-size:.8rem}@media(max-width:430px){.btn--sm{height:40px;font-size:.82rem}}.btn--block{display:flex;width:100%}.btn--icon{height:34px;width:34px;padding:0;font-size:1rem}.btn--del{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border:none;border-radius:0;background:var(--red-bg);color:var(--red);font-size:.9rem;cursor:pointer;flex-shrink:0}.btn--del:active{background:var(--red);color:#fff}.form-section{background:var(--surface);border:1px solid var(--border);border-radius:0;padding:18px 16px;margin-bottom:12px;box-shadow:var(--shadow-sm)}.form-row{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}.form-row:last-child{margin-bottom:0}.form-row label{font-size:.75rem;font-weight:700;color:var(--text-2);text-transform:uppercase;letter-spacing:.05em}.form-row input,.form-row select,.form-row textarea,.form-input,.search-inp{width:100%;background:var(--surface);border:1.5px solid var(--border-2);border-radius:0;padding:10px 12px;color:var(--text);font-size:16px;font-family:var(--font-sans);min-height:var(--tap);transition:border-color .14s;-webkit-appearance:none;appearance:none}.form-row input:focus,.form-row select:focus,.form-row textarea:focus,.form-input:focus,.search-inp:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px rgba(184,58,9,.08)}.form-row textarea{resize:vertical;min-height:80px}.form-row select,select.form-input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23636366'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}@media (max-width:380px){.form-grid{grid-template-columns:1fr}}.toggle-label{display:flex;align-items:center;gap:10px;font-size:.9rem;cursor:pointer;color:var(--text);min-height:var(--tap);padding:4px 0}.toggle-label input[type="checkbox"]{width:20px;height:20px;accent-color:var(--accent);flex-shrink:0}.form-actions{display:flex;gap:8px;flex-wrap:wrap;padding-top:8px}.form-sticky-bar{position:fixed;bottom:0;left:0;right:0;z-index:50;background:var(--surface);border-top:2px solid var(--accent);padding:10px 16px calc(10px+env(safe-area-inset-bottom)) 16px;box-shadow:0 -4px 16px rgba(0,0,0,.08);display:flex;flex-direction:column;gap:8px;padding-left:calc(16px+env(safe-area-inset-left));padding-right:calc(16px+env(safe-area-inset-right))}@media (min-width:768px) and (min-height:481px){.form-sticky-bar{left:var(--sidebar-w)}}.form-sticky-bar .btn--block{height:50px;font-size:1rem}.form-sticky-bar__row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.form-sticky-bar__row2 .btn{width:100%;justify-content:center}.item-cols-header{display:grid;grid-template-columns:1fr 50px 70px 56px 32px;gap:5px;padding:0 2px 6px 2px;border-bottom:1px solid var(--border);margin-bottom:8px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text-3)}.form-item-row{display:grid;grid-template-columns:1fr 50px 70px 56px 32px;gap:5px;margin-bottom:8px;align-items:center}@media (max-width:360px){.item-cols-header,.form-item-row{grid-template-columns:1fr 42px 64px 48px 28px;gap:3px}}.form-item-row input{padding:8px 6px;font-size:16px;min-height:40px;background:var(--surface);border:1.5px solid var(--border-2);border-radius:0;color:var(--text);width:100%;-webkit-appearance:none}.form-item-row input:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px rgba(184,58,9,.08)}.item-sub{font-family:var(--font-mono);font-size:.78rem;font-weight:700;color:var(--accent);text-align:right;white-space:nowrap}.badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:0;font-size:.72rem;font-weight:700;white-space:nowrap;user-select:none;border-width:1px;border-style:solid}.badge__dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}.badge--green{background:var(--green-bg);color:var(--green);border-color:var(--green-bd)}.badge--green .badge__dot{background:var(--green)}.badge--orange,.badge--amber{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-bd)}.badge--orange .badge__dot,.badge--amber .badge__dot{background:var(--amber)}.badge--red{background:var(--red-bg);color:var(--red);border-color:var(--red-bd)}.badge--red .badge__dot{background:var(--red)}.badge--blue{background:var(--blue-bg);color:var(--blue);border-color:var(--blue-bd)}.badge--blue .badge__dot{background:var(--blue)}.badge--grey{background:var(--surface-3);color:var(--text-2);border-color:var(--border-2)}.badge--grey .badge__dot{background:var(--text-2)}#toast{position:fixed;bottom:calc(20px+env(safe-area-inset-bottom));left:50%;transform:translateX(-50%) translateY(80px);opacity:0;background:var(--text);color:var(--surface);padding:11px 20px;border-radius:0;font-size:.86rem;font-weight:500;max-width:min(86vw,380px);text-align:center;z-index:9999;pointer-events:none;box-shadow:var(--shadow-md);transition:transform .25s cubic-bezier(.34,1.4,.64,1),opacity .25s}#toast.toast--show{transform:translateX(-50%) translateY(0);opacity:1}#toast.toast--error{background:var(--red);color:#fff}#toast.toast--warn{background:var(--amber);color:#fff}#toast.toast--success{background:var(--green);color:#fff}.dash-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}@media (min-width:640px){.dash-grid{grid-template-columns:repeat(4,1fr)}}.dash-card{background:var(--surface);border:1px solid var(--border);border-radius:0;padding:16px;box-shadow:var(--shadow-sm)}.dash-card--alert{border-color:var(--red-bd);background:var(--red-bg)}.dash-card__label{font-size:.7rem;font-weight:700;color:var(--text-2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}.dash-card__value{font-family:var(--font-mono);font-size:1.3rem;font-weight:700;color:var(--text)}.dash-card--alert .dash-card__value{color:var(--red)}.overdue-alert{background:var(--red-bg);border:1px solid var(--red-bd);padding:10px 14px;font-size:.875rem;color:var(--red);margin-bottom:16px;display:flex;align-items:center;gap:8px}.overdue-alert a{color:var(--red);font-weight:700}.demo-dash-card{margin-bottom:14px}.demo-progress__track{background:var(--surface-3);height:6px;margin:6px 0 3px;overflow:hidden}.demo-progress__bar{background:var(--accent);height:6px;transition:width .3s}.demo-progress__label{font-size:.75rem;color:var(--text-2)}.onboarding-card{background:var(--surface);border:2px solid var(--accent-bd);padding:18px;margin-bottom:18px}.onboarding-progress{background:var(--surface-3);height:4px;margin-bottom:12px;overflow:hidden}.onboarding-progress__bar{background:var(--accent);height:4px;transition:width .3s}.onboarding-list{list-style:none}.onboarding-step{font-size:.86rem;color:var(--text-2);padding:5px 0;display:flex;align-items:center;gap:8px}.onboarding-step--done{color:var(--green)}.hist-controls{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;align-items:center}.filter-tabs{display:flex;gap:0;flex-wrap:wrap}.filter-tab{display:inline-flex;align-items:center;height:34px;padding:0 12px;border-radius:0;font-size:.78rem;font-weight:600;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;background:var(--surface);border:1px solid var(--border-2);color:var(--text-2);margin-right:-1px;transition:background .14s,color .14s}.filter-tab:hover{background:var(--accent-tint);color:var(--accent);z-index:1}.filter-tab:active{opacity:.85}.filter-tab--active{background:var(--accent);color:#fff;border-color:var(--accent);z-index:2}.sort-sel{height:36px;border:1px solid var(--border-2);border-radius:0;background:var(--surface);color:var(--text);font-size:.85rem;padding:0 28px 0 10px;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23636366'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center}.search-inp{height:40px;flex:1;min-width:130px;background:var(--surface);border:1.5px solid var(--border-2);border-radius:0;padding:0 12px;color:var(--text);font-size:16px;-webkit-appearance:none}.search-inp:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px rgba(184,58,9,.08)}.inv-list{display:flex;flex-direction:column;gap:8px}.inv-item{background:var(--surface);border:1px solid var(--border);border-radius:0;padding:14px;cursor:pointer;transition:box-shadow .14s,border-color .14s;user-select:none;-webkit-tap-highlight-color:transparent}.inv-item:hover{box-shadow:var(--shadow-md);border-color:var(--accent-bd)}.inv-item:active{opacity:.95}.inv-item--overdue{border-left:3px solid var(--red)}.inv-item__head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}.inv-item__id{font-family:var(--font-mono);font-size:.8rem;font-weight:700;color:var(--accent)}.inv-item__cust{font-size:.95rem;font-weight:600;margin-bottom:6px}.inv-item__row{display:flex;justify-content:space-between;align-items:center}.inv-item__amount{font-family:var(--font-mono);font-size:.9rem;font-weight:700}.inv-item__date{font-size:.8rem;color:var(--text-2)}.inv-item__overdue{font-size:.75rem;color:var(--red);font-weight:700;margin-top:4px}.inv-item__actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}.inv-view-toolbar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border);align-items:center}.inv-view-toolbar .btn--primary{margin-left:auto}.inv-doc{background:var(--surface);border:1px solid var(--border);border-radius:0;padding:24px 20px;max-width:700px;position:relative;overflow:hidden;box-shadow:var(--shadow)}@media (min-width:640px){.inv-doc{padding:32px 28px}}.inv-logo{max-height:72px;max-width:200px;margin-bottom:10px}.inv-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:18px}.inv-biz__name{font-family:var(--font-serif);font-size:1.1rem;font-weight:700;color:var(--accent)}.inv-biz__addr,.inv-biz__phone,.inv-biz__email{font-size:.8rem;color:var(--text-2);margin-top:2px}.inv-title-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.inv-title{font-family:var(--font-serif);font-size:1.35rem;font-weight:700}.inv-meta-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;background:var(--surface-2);padding:14px;margin-bottom:18px;font-size:.84rem}.inv-meta-grid b{display:block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text-2);margin-bottom:2px}.inv-table{width:100%;border-collapse:collapse;margin-bottom:16px;font-size:.86rem}.inv-table th{text-align:left;padding:8px 6px;background:var(--surface-2);border-bottom:2px solid var(--border);font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--text-2)}.inv-table td{padding:9px 6px;border-bottom:1px solid var(--border)}.inv-table td:last-child,.inv-table th:last-child{text-align:right}.inv-totals{margin-left:auto;max-width:280px;margin-bottom:18px}.totals-row{display:flex;justify-content:space-between;padding:5px 0;font-size:.875rem;border-bottom:1px dashed var(--border)}.totals-row--grand{font-weight:800;font-size:1.05rem;border-bottom:2px solid var(--accent);color:var(--accent);padding:8px 0;margin-top:4px}.totals-row--bal{font-weight:700;color:var(--red)}.bank-block{background:var(--surface-2);border:1px solid var(--border);padding:12px 14px;font-size:.875rem;margin-bottom:14px;line-height:1.75}.nqr-img{width:88px;height:88px;border:1px solid var(--border)}.ins-plan{background:var(--blue-bg);border:1px solid var(--blue-bd);padding:12px 14px;font-size:.875rem;margin-bottom:14px;color:var(--blue);line-height:1.8}.void-note{background:var(--red-bg);color:var(--red);padding:9px 13px;font-size:.82rem;margin-bottom:12px}.void-stamp,.unpaid-stamp{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-25deg);font-family:var(--font-serif);font-size:5rem;font-weight:900;letter-spacing:.1em;opacity:.055;pointer-events:none;z-index:0;user-select:none}.void-stamp{color:var(--red)}.unpaid-stamp{color:#888}.inv-sig-block img{max-height:64px;max-width:160px}.inv-sig-label{font-size:.72rem;color:var(--text-2);margin-top:4px;border-top:1px solid var(--border);padding-top:4px;width:160px}.inv-remark{font-size:.875rem;color:var(--text-2);margin-bottom:12px;line-height:1.6}.inv-thankyou{font-style:italic;font-size:.875rem;color:var(--text-2);margin-bottom:12px}.inv-footer{font-size:.7rem;color:var(--text-3);text-align:center;margin-top:18px;padding-top:12px;border-top:1px solid var(--border);line-height:1.8}.pay-section,.pay-hist{background:var(--surface);border:1px solid var(--border);padding:18px 16px;margin-top:16px;max-width:700px}.pay-entry{font-size:.82rem;padding:7px 0;border-bottom:1px solid var(--border);color:var(--text-2);font-family:var(--font-mono)}.pay-entry:last-child{border-bottom:none}.report-tabs{display:flex;gap:0;margin-bottom:18px}#rev-chart{display:block;width:100%;height:200px;background:var(--surface);border:1px solid var(--border);margin-bottom:20px}.top5-grid{display:grid;grid-template-columns:1fr;gap:14px}@media (min-width:600px){.top5-grid{grid-template-columns:1fr 1fr}}.top5-card{background:var(--surface);border:1px solid var(--border);padding:18px 16px}.top5-title{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-2);margin-bottom:14px}.top5-item{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--border)}.top5-item:last-child{border-bottom:none}.top5-rank{font-family:var(--font-mono);font-size:.75rem;font-weight:700;color:var(--accent);width:18px;text-align:center;flex-shrink:0}.top5-info{flex:1;min-width:0}.top5-name{font-size:.875rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:4px}.top5-bar-wrap{height:4px;background:var(--surface-3);overflow:hidden}.top5-bar{height:4px;background:var(--accent);transition:width .4s ease}.top5-val{font-family:var(--font-mono);font-size:.8rem;font-weight:700;color:var(--accent);white-space:nowrap;flex-shrink:0}.cat-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--border)}.cat-item{background:var(--surface);border-bottom:1px solid var(--border);padding:12px 14px;display:flex;align-items:center;gap:10px;min-height:var(--tap)}.cat-item:last-child{border-bottom:none}.cat-item__name{font-weight:600;flex:1;font-size:.9rem}.cat-item__price{font-family:var(--font-mono);font-size:.9rem;color:var(--accent);font-weight:700;flex-shrink:0}.cat-item__actions{display:flex;gap:6px;flex-shrink:0}.cu-list{display:flex;flex-direction:column;gap:8px}.cu-item{background:var(--surface);border:1px solid var(--border);padding:16px}.cu-item__name{font-weight:700;font-size:.95rem}.cu-item__phone{font-size:.85rem;color:var(--text-2);margin-top:2px}.cu-item__stats{font-size:.8rem;color:var(--text-3);margin:6px 0}.cu-item__actions{display:flex;gap:6px;margin-top:8px}.sub-tabs{display:flex;gap:0;flex-wrap:wrap;margin-bottom:20px;border-bottom:2px solid var(--accent)}.sub-tab{display:inline-flex;align-items:center;height:38px;padding:0 14px;border-radius:0;font-size:.82rem;font-weight:600;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;background:var(--surface);border:1px solid var(--border-2);border-bottom:none;color:var(--text-2);margin-right:-1px;transition:background .14s,color .14s}.sub-tab:hover{background:var(--accent-tint);color:var(--accent)}.sub-tab:active{opacity:.85}.sub-tab--active{background:var(--accent) !important;color:#fff !important;border-color:var(--accent) !important;z-index:1}.settings-section{background:var(--surface);border:1px solid var(--border);border-radius:0;padding:18px 16px;margin-bottom:14px}.settings-section h3{margin-bottom:14px}.settings-hint{font-size:.875rem;color:var(--text-2);margin-bottom:10px;line-height:1.5}.thumb{width:68px;height:68px;object-fit:contain;border:1px solid var(--border);margin-top:8px;background:var(--surface-2)}.audit-log{max-height:300px;overflow-y:auto}.audit-entry{font-size:.78rem;padding:6px 0;border-bottom:1px solid var(--border);color:var(--text-2)}.audit-entry:last-child{border-bottom:none}.audit-time{font-family:var(--font-mono);color:var(--text-3)}.audit-action{font-weight:600}.ip-notice{background:var(--surface-2);border:1px solid var(--border);padding:14px 16px;font-size:.78rem;color:var(--text-2);line-height:1.75;margin-top:10px}.ip-notice strong{color:var(--text)}.copyright-badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-tint);border:1px solid var(--accent-bd);padding:5px 12px;font-size:.75rem;font-weight:700;color:var(--accent);margin-bottom:8px}.biz-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--border)}.biz-item{background:var(--surface);border-bottom:1px solid var(--border);padding:14px;display:flex;align-items:center;gap:12px;min-height:var(--tap)}.biz-item:last-child{border-bottom:none}.biz-item--active{border-left:3px solid var(--accent);background:var(--accent-tint)}.biz-item__name{font-weight:700;flex:1}.biz-item__phone{font-size:.85rem;color:var(--text-2)}.biz-item__actions{display:flex;gap:6px;flex-shrink:0}.upgrade-notice{background:var(--surface);border:1px solid var(--border);padding:36px 24px;text-align:center}.pricing-grid{display:grid;grid-template-columns:1fr;gap:12px}@media (min-width:600px){.pricing-grid{grid-template-columns:repeat(3,1fr)}}.pricing-card{background:var(--surface);border:1px solid var(--border);padding:20px 16px;position:relative;display:flex;flex-direction:column;gap:8px}.pricing-card--featured{border:2px solid var(--accent)}.pricing-badge{position:absolute;top:-1px;right:12px;background:var(--accent);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px}.pricing-tier{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-2)}.pricing-price{font-family:var(--font-serif);font-size:1.6rem;font-weight:700;color:var(--text);line-height:1.1}.pricing-per{font-size:.75rem;font-weight:400;color:var(--text-2);margin-left:2px}.pricing-grace{font-size:.8rem;color:var(--text-2);padding-bottom:10px;border-bottom:1px solid var(--border)}.pricing-features{list-style:none;padding:0;font-size:.84rem;color:var(--text-2);display:flex;flex-direction:column;gap:5px;flex:1;margin-bottom:12px}.pricing-features li::before{content:"\2713 ";color:var(--green);font-weight:700}#demo-wall{display:none;position:fixed;inset:0;z-index:5000;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:20px;padding-bottom:calc(20px+env(safe-area-inset-bottom))}#demo-wall.demo-wall--show{display:flex}.demo-wall__card{background:var(--surface);border:2px solid var(--accent);padding:32px 24px;max-width:420px;width:100%;text-align:center}.demo-wall__icon{font-size:2.5rem;margin-bottom:10px}.demo-wall__title{font-family:var(--font-serif);font-size:1.3rem;font-weight:700;margin-bottom:8px}.demo-wall__sub{font-size:.9rem;color:var(--text-2);margin-bottom:22px;line-height:1.5}.demo-wall__steps{text-align:left;margin-bottom:22px}.demo-wall__step{display:flex;align-items:flex-start;gap:12px;padding:9px 0;border-bottom:1px solid var(--border);font-size:.86rem;color:var(--text-2);line-height:1.5}.demo-wall__step:last-child{border-bottom:none}.demo-wall__step b{color:var(--text)}.demo-wall__step-num{background:var(--accent);color:#fff;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0}.demo-wall__actions{display:flex;flex-direction:column;gap:10px}#activation-modal{display:none;position:fixed;inset:0;z-index:6000;background:rgba(255,255,255,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px}#activation-modal.modal--show{display:flex}.modal__card{background:var(--surface);border:2px solid var(--border-2);padding:28px 24px;max-width:400px;width:100%}.modal__title{font-family:var(--font-serif);font-size:1.2rem;font-weight:700;margin-bottom:6px}.modal__sub{font-size:.85rem;color:var(--text-2);margin-bottom:18px;line-height:1.5}.modal__close{float:right;width:28px;height:28px;background:var(--surface-3);color:var(--text-2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.9rem;cursor:pointer}#pin-wall{display:none;position:fixed;inset:0;z-index:7000;background:#ffffff;align-items:center;justify-content:center;flex-direction:column;padding:20px;padding-bottom:calc(20px+env(safe-area-inset-bottom));padding-top:calc(20px+env(safe-area-inset-top))}.pin-card{background:var(--surface);border:2px solid var(--border-2);padding:32px 28px;max-width:340px;width:100%;text-align:center}.pin-card__brand{font-family:var(--font-serif);font-size:.85rem;color:var(--accent);font-weight:700;margin-bottom:4px}.pin-card__title{font-family:var(--font-serif);font-size:1.2rem;font-weight:700;margin-bottom:4px}.pin-card__sub{font-size:.82rem;color:var(--text-2);margin-bottom:24px}.pin-card__dots{display:flex;gap:14px;justify-content:center;margin-bottom:24px}.pin-dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--border-2);background:var(--bg);transition:background .1s}.pin-dot--filled{background:var(--accent);border-color:var(--accent)}.pin-pad{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.pin-key{display:flex;align-items:center;justify-content:center;height:56px;border:1px solid var(--border-2);border-radius:0;background:var(--surface-2);color:var(--text);font-size:1.2rem;font-weight:700;cursor:pointer;user-select:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent;transition:background .1s}.pin-key:active{background:var(--accent);color:#fff;border-color:var(--accent)}.pin-key--clear{font-size:.9rem;font-weight:600;color:var(--text-2)}.empty-state{text-align:center;padding:48px 20px;color:var(--text-2);font-size:.9rem;line-height:1.6}.doc-type-tabs{display:flex;gap:0;flex-wrap:wrap;margin-bottom:4px}.doc-tab{display:inline-flex;align-items:center;height:36px;padding:0 16px;border-radius:0;font-size:.86rem;font-weight:600;cursor:pointer;-webkit-tap-highlight-color:transparent;background:var(--surface);border:1px solid var(--border-2);color:var(--text-2);margin-right:-1px;transition:background .14s,color .14s}.doc-tab:active{opacity:.85}.doc-tab--active{background:var(--accent);color:#fff;border-color:var(--accent);z-index:1}@media print{.no-print,#topbar,#demo-banner,#toast,#demo-wall,#activation-modal,#pin-wall,.inv-view-toolbar,.form-sticky-bar{display:none !important}body{background:white;color:black;padding:0}#main-content{margin:0;padding:0}.inv-doc{border:none;box-shadow:none;padding:0}@page{margin:1.5cm}}.item-type-toggle{display:flex;gap:0;grid-column:1 / -1;margin-bottom:6px}.item-type-btn{flex:1;height:28px;font-size:.72rem;font-weight:600;cursor:pointer;background:var(--surface-2);border:1px solid var(--border-2);color:var(--text-2);margin-right:-1px;transition:background .12s,color .12s}.item-type-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);z-index:1}.item-type-btn:first-child{border-radius:0}.item-type-btn:last-child{border-radius:0}.form-item-row{display:grid;grid-template-columns:1fr 50px 70px 56px 32px;gap:5px;margin-bottom:12px;align-items:center}.form-item-row .item-type-toggle{grid-column:1 / -1;margin-bottom:4px}.help-section__head{display:flex;align-items:center;cursor:pointer;padding:4px 0;user-select:none}.help-section__head:hover .help-chevron{color:var(--accent)}.help-chevron{font-size:1.2rem;color:var(--text-3);transition:transform .2s;flex-shrink:0}.help-section__body{font-size:.875rem;color:var(--text-2);line-height:1.75;padding-top:12px;padding-left:2px;border-top:1px solid var(--border);margin-top:10px}.help-section__body b{color:var(--text)}.help-section__body a{color:var(--accent)}#app-footer{padding:18px 16px 12px;text-align:center;border-top:1px solid var(--border);margin-top:32px;color:var(--text-3);font-size:.72rem;line-height:1.8;user-select:none}#app-footer strong{color:var(--text-2);font-weight:600}#app-footer a{color:var(--accent)}@media(min-width:768px){#app-footer{margin-left:0}}.topbar__auth{display:flex;align-items:center;gap:8px;margin-left:auto;padding:0 16px;height:var(--nav-brand-h);flex-shrink:0}.auth-btn{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 12px;font-size:.75rem;font-weight:700;cursor:pointer;background:var(--accent-tint);border:1px solid var(--accent-bd);color:var(--accent);-webkit-tap-highlight-color:transparent;white-space:nowrap;transition:background .14s}.auth-btn:hover{background:var(--accent);color:#fff}.auth-avatar{width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;-webkit-tap-highlight-color:transparent}#auth-modal{display:none;position:fixed;inset:0;z-index:8000;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px;padding-bottom:calc(20px+env(safe-area-inset-bottom))}#auth-modal.modal--show{display:flex}.auth-card{background:var(--surface);width:100%;max-width:400px;padding:28px 24px;border:2px solid var(--border-2);position:relative}.auth-card__logo{font-family:var(--font-serif);font-size:1.1rem;font-weight:700;color:var(--accent);margin-bottom:4px}.auth-card__sub{font-size:.8rem;color:var(--text-3);margin-bottom:20px}.auth-tabs{display:flex;border-bottom:2px solid var(--accent);margin-bottom:20px}.auth-tab{flex:1;height:38px;font-size:.875rem;font-weight:600;cursor:pointer;border:none;background:none;color:var(--text-2);-webkit-tap-highlight-color:transparent;transition:color .14s}.auth-tab--active{color:var(--accent);font-weight:700;border-bottom:2px solid var(--accent);margin-bottom:-2px}.auth-field{margin-bottom:14px}.auth-field label{display:block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-2);margin-bottom:5px}.auth-field input{width:100%;border:1.5px solid var(--border-2);padding:11px 13px;font-size:16px;font-family:var(--font-sans);color:var(--text);background:var(--surface);outline:none;-webkit-appearance:none;transition:border-color .14s}.auth-field input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(184,58,9,.08)}.auth-err{font-size:.82rem;color:var(--red);margin-bottom:12px;min-height:18px}.auth-switch{font-size:.82rem;color:var(--text-2);text-align:center;margin-top:14px}.auth-switch a{color:var(--accent);font-weight:600;cursor:pointer}@media(max-width:380px){.auth-card{padding:22px 16px}}body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}@media(max-width:600px){.filter-tab{height:40px;font-size:.82rem}.sub-tab{height:40px}}@media(orientation:landscape) and (max-height:500px){#main-content{padding-top:14px}}</style>
 </head>
 <body data-dark="0">
 
@@ -29,6 +29,10 @@
       <!-- Brand row — sits above the tab strip -->
       <div class="topbar__brand-row">
         <span class="topbar__brand"><span class="topbar__brand-line1"><span class="topbar__brand-word">Smart</span></span><span class="topbar__brand-line2"><span class="topbar__brand-accent">Invoice</span><span class="topbar__brand-pro">Pro</span></span></span>
+        <div class="topbar__auth" id="topbar-auth">
+          <button class="auth-btn" id="auth-signin-btn" onclick="window.__AUTH__.openModal('signin')" style="display:none">Sign In</button>
+          <div class="auth-avatar" id="auth-avatar" onclick="window.__AUTH__.openModal('account')" style="display:none" title="Account"></div>
+        </div>
       </div>
       <!-- Tab strip -->
       <div class="topbar__tabs" role="tablist">
@@ -134,9 +138,9 @@ function _secret() { return _sp1 + _sp2 + _sp3; }
 var _XK = 'SIP2026xIAT9f3b';
 var LS_KEY = 'qi3_lic_v4';
 var TIERS = {
-'M': { name: 'Micro SME',  price: 12500, grace: 7  },
-'X': { name: 'Medium SME', price: 19500, grace: 14 },
-'G': { name: 'Growth',     price: 27500, grace: 21 }
+'M': { name: 'Micro SME',  price: 12500, grace: 7,  maxDevices: 1 },
+'X': { name: 'Medium SME', price: 19500, grace: 14, maxDevices: 3 },
+'G': { name: 'Growth',     price: 27500, grace: 21, maxDevices: 5 }
 };
 function _encode(obj) {
 var json = JSON.stringify(obj);
@@ -253,15 +257,61 @@ return _sha256(parts.join('||'));
 }
 function save(result, fp, rawKey) {
 try {
+var tier = TIERS[result.tid] || {};
 localStorage.setItem(LS_KEY, _encode({
-key:  rawKey || '',
-tier: result.tier || '',
-tid:  result.tid  || '',
-exp:  result.exp  || 0,
-fp:   fp || '',
-ts:   Date.now()
+key:        rawKey || '',
+tier:       result.tier || '',
+tid:        result.tid  || '',
+exp:        result.exp  || 0,
+fp:         fp || '',
+ts:         Date.now(),
+maxDevices: tier.maxDevices || 1,
+deviceOk:   false  // set to true after Worker confirms
 }));
-} catch (e) {  }
+// Register this device with the Worker
+_registerDevice(rawKey, fp, result.tid);
+} catch (e) { }
+}
+
+function _registerDevice(licKey, fp, tid) {
+var apiBase = (typeof API_BASE !== 'undefined' && API_BASE) ? API_BASE : '';
+if (!apiBase) return;
+fetch(apiBase + '/activate-device', {
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify({ licenseKey: licKey, deviceFingerprint: fp, plan: tid })
+})
+.then(function(r) { return r.json(); })
+.then(function(data) {
+if (data.allowed) {
+// Update stored data with server confirmation
+var raw = localStorage.getItem(LS_KEY);
+if (raw) {
+var stored = _decode(raw);
+if (stored) {
+stored.deviceOk    = true;
+stored.deviceCount = data.currentCount;
+stored.maxDevices  = data.maxDevices;
+localStorage.setItem(LS_KEY, _encode(stored));
+}
+}
+} else {
+// Device limit exceeded — clear licence
+localStorage.removeItem(LS_KEY);
+toast(data.error || 'Device limit reached for this licence', 'error');
+}
+})
+.catch(function() {
+// Offline — allow for now, will verify next time online
+var raw = localStorage.getItem(LS_KEY);
+if (raw) {
+var stored = _decode(raw);
+if (stored) {
+stored.deviceOk = (stored.tid !== 'M'); // Micro stays locked; X/G trusted offline
+localStorage.setItem(LS_KEY, _encode(stored));
+}
+}
+});
 }
 function load() {
 try {
@@ -273,7 +323,7 @@ return _decode(raw);
 function check() {
 var data = load();
 if (!data || !data.tid) return { status: 'none' };
-var tier     = TIERS[data.tid] || { grace: 0 };
+var tier     = TIERS[data.tid] || { grace: 0, maxDevices: 1 };
 var now      = Date.now();
 var exp      = data.exp || 0;
 var graceMs  = (tier.grace || 0) * 86400000;
@@ -287,19 +337,53 @@ status = 'grace';
 } else {
 status = 'expired';
 }
+// For Micro tier, enforce single-device lock via fingerprint
+// Medium and Growth trust the server-confirmed deviceOk flag
+var deviceLocked = false;
+if (data.tid === 'M' && data.fp) {
+// Check fingerprint synchronously using cached value
+// Full async check happens on activation only
+var currentParts = [
+navigator.userAgent    || '',
+navigator.language     || '',
+String(screen.width),
+String(screen.height),
+String(screen.colorDepth || 0),
+(function(){try{return Intl.DateTimeFormat().resolvedOptions().timeZone;}catch(e){return '';}}()),
+String(navigator.hardwareConcurrency || 0)
+].join('||');
+// We can't do async SHA256 here, so use a quick hash for fast check
+var quickHash = 0;
+for (var qi = 0; qi < currentParts.length; qi++) {
+quickHash = ((quickHash << 5) - quickHash) + currentParts.charCodeAt(qi);
+quickHash |= 0;
+}
+// Store quickHash on first save if not present
+if (!data.fpq) {
+// First time — store it
+data.fpq = String(quickHash);
+try { localStorage.setItem(LS_KEY, _encode(data)); } catch(e) {}
+} else if (data.fpq !== String(quickHash)) {
+deviceLocked = true;
+}
+}
 return {
-status:     status,
-tier:       data.tier || '',
-tid:        data.tid  || '',
-exp:        exp,
-expiryDate: new Date(exp).toLocaleDateString('en-GB'),
-daysLeft:   daysLeft,
-graceDays:  grLeft
+status:      deviceLocked ? 'device_mismatch' : status,
+tier:        data.tier || '',
+tid:         data.tid  || '',
+exp:         exp,
+expiryDate:  new Date(exp).toLocaleDateString('en-GB'),
+daysLeft:    daysLeft,
+graceDays:   grLeft,
+maxDevices:  data.maxDevices || tier.maxDevices || 1,
+deviceCount: data.deviceCount || 1,
+deviceOk:    data.deviceOk !== false
 };
 }
 function isValid() {
 var s = check().status;
 return s === 'active' || s === 'expiring' || s === 'grace';
+// device_mismatch and expired both return false
 }
 function clear() {
 try { localStorage.removeItem(LS_KEY); } catch (e) {}
@@ -1047,7 +1131,7 @@ html += '<div class="inv-sig-block"><img src="' + inv.pro.sig + '" alt="Signatur
 if (inv.remark)             { html += '<div class="inv-remark"><b>Note:</b> ' + escHtml(inv.remark) + '</div>'; }
 if (inv.pro && inv.pro.terms) { html += '<div class="inv-remark" style="font-size:.8rem;color:var(--text-3)"><b>Terms:</b> ' + escHtml(inv.pro.terms) + '</div>'; }
 if (inv.pro && inv.pro.note)  { html += '<div class="inv-thankyou">' + escHtml(inv.pro.note) + '</div>'; }
-html += '<div class="inv-footer">Powered by Ipadeola Agoro Technologies &mdash; SmartInvoice Pro v' + APP_VERSION + '</div>';
+html += '<div class="inv-footer">Designed by John Ipadeola &mdash; &copy; 2026 AgoroX Technologies &mdash; SmartInvoice Pro v' + APP_VERSION + '</div>';
 html += '</div>';
 return html;
 }
@@ -1201,7 +1285,7 @@ var sig  = (inv.pro && inv.pro.sig)  ? '<img src="' + inv.pro.sig  + '" style="m
 var bank = '';
 if (inv.bank && inv.bank.acct) { bank = '<b>Payment Details</b><br>' + escHtml(inv.bank.name || '') + '<br>Acct: ' + escHtml(inv.bank.acct) + '<br>' + escHtml(inv.bank.aname || ''); }
 var dtLabel = (inv.docType ? inv.docType.toUpperCase() : 'INVOICE');
-var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + dtLabel + ' ' + inv.id + '</title><style>@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;font-size:13px;color:#111;padding:20px;max-width:800px;margin:0 auto}h1{font-family:var(--font-serif);font-size:20px;color:#B83A09;margin-bottom:4px}.meta{background:#f5f5f5;padding:10px;margin:12px 0;display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px}@media(max-width:480px){.meta{grid-template-columns:1fr}}table{width:100%;border-collapse:collapse;margin:12px 0}th{background:#f5f5f5;padding:6px;text-align:left;font-size:10px;border-bottom:2px solid #ddd}td{padding:6px;border-bottom:1px solid #eee;font-size:11px}.tot{margin-left:auto;max-width:200px}.tot-row{display:flex;justify-content:space-between;padding:3px 0;font-size:11px;border-bottom:1px dashed #ddd}.tot-grand{font-weight:800;font-size:13px;border-bottom:2px solid #B83A09;color:#B83A09;padding:6px 0}.bank{background:#f5f5f5;padding:10px;border-radius:4px;font-size:11px;line-height:1.7;margin-top:10px}.footer{font-size:9px;color:#aaa;text-align:center;margin-top:16px;padding-top:8px;border-top:1px solid #eee}@media print{body{padding:0}}</style></head><body>' + logo + '<h1>' + escHtml((inv.pro && inv.pro.name) ? inv.pro.name : '') + '</h1><p style="font-size:10px;color:#666">' + escHtml((inv.pro && inv.pro.addr) ? inv.pro.addr : '') + (inv.pro && inv.pro.phone ? ' &bull; ' + escHtml(inv.pro.phone) : '') + '</p><hr style="margin:8px 0;border:none;border-top:2px solid #B83A09"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-family:var(--font-serif);font-size:16px;font-weight:bold">' + dtLabel + '</span><span style="background:' + statusColor(inv.status) + ';color:#fff;padding:3px 10px;border-radius:2px;font-size:10px;font-weight:700">' + inv.status.toUpperCase() + '</span></div><div class="meta"><div><b style="display:block;font-size:9px;color:#999;text-transform:uppercase">' + dtLabel + ' #</b>' + escHtml(inv.id) + '</div><div><b style="display:block;font-size:9px;color:#999;text-transform:uppercase">Date</b>' + fmDate(inv.date) + '</div><div><b style="display:block;font-size:9px;color:#999;text-transform:uppercase">Bill To</b>' + escHtml((inv.cust && inv.cust.name) ? inv.cust.name : '') + '</div>' + (inv.due ? '<div><b style="display:block;font-size:9px;color:#999;text-transform:uppercase">Due</b>' + fmDate(inv.due) + '</div>' : '') + '</div><table><thead><tr><th>Item</th><th>Qty</th><th style="text-align:right">Unit Price</th><th style="text-align:right">Subtotal</th></tr></thead><tbody>' + items + '</tbody></table><div class="tot"><div class="tot-row"><span>Subtotal</span><span>' + cur + fm(inv.sub) + '</span></div>' + (inv.disc > 0 ? '<div class="tot-row"><span>Discount</span><span>- ' + cur + fm(inv.disc) + '</span></div>' : '') + (inv.vat > 0 ? '<div class="tot-row"><span>' + escHtml(inv.taxName || 'VAT') + '</span><span>' + cur + fm(inv.vat) + '</span></div>' : '') + '<div class="tot-row tot-grand"><span>Total</span><span>' + cur + fm(inv.grand) + '</span></div>' + (inv.paid > 0 && inv.status !== 'Paid' ? '<div class="tot-row"><span>Paid</span><span>' + cur + fm(inv.paid) + '</span></div><div class="tot-row" style="font-weight:700;color:#b00"><span>Balance</span><span>' + cur + fm(inv.bal) + '</span></div>' : '') + '</div>' + (bank ? '<div class="bank">' + bank + '</div>' : '') + (inv.remark ? '<p style="font-size:10px;color:#666;margin-top:8px"><b>Note:</b> ' + escHtml(inv.remark) + '</p>' : '') + (inv.pro && inv.pro.note ? '<p style="font-size:10px;color:#888;font-style:italic;margin-top:6px">' + escHtml(inv.pro.note) + '</p>' : '') + sig + '<div class="footer">Powered by Ipadeola Agoro Technologies &mdash; SmartInvoice Pro</div></body></html>';
+var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + dtLabel + ' ' + inv.id + '</title><style>@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;font-size:13px;color:#111;padding:20px;max-width:800px;margin:0 auto}h1{font-family:var(--font-serif);font-size:20px;color:#B83A09;margin-bottom:4px}.meta{background:#f5f5f5;padding:10px;margin:12px 0;display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px}@media(max-width:480px){.meta{grid-template-columns:1fr}}table{width:100%;border-collapse:collapse;margin:12px 0}th{background:#f5f5f5;padding:6px;text-align:left;font-size:10px;border-bottom:2px solid #ddd}td{padding:6px;border-bottom:1px solid #eee;font-size:11px}.tot{margin-left:auto;max-width:200px}.tot-row{display:flex;justify-content:space-between;padding:3px 0;font-size:11px;border-bottom:1px dashed #ddd}.tot-grand{font-weight:800;font-size:13px;border-bottom:2px solid #B83A09;color:#B83A09;padding:6px 0}.bank{background:#f5f5f5;padding:10px;border-radius:4px;font-size:11px;line-height:1.7;margin-top:10px}.footer{font-size:9px;color:#aaa;text-align:center;margin-top:16px;padding-top:8px;border-top:1px solid #eee}@media print{body{padding:0}}</style></head><body>' + logo + '<h1>' + escHtml((inv.pro && inv.pro.name) ? inv.pro.name : '') + '</h1><p style="font-size:10px;color:#666">' + escHtml((inv.pro && inv.pro.addr) ? inv.pro.addr : '') + (inv.pro && inv.pro.phone ? ' &bull; ' + escHtml(inv.pro.phone) : '') + '</p><hr style="margin:8px 0;border:none;border-top:2px solid #B83A09"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-family:var(--font-serif);font-size:16px;font-weight:bold">' + dtLabel + '</span><span style="background:' + statusColor(inv.status) + ';color:#fff;padding:3px 10px;border-radius:2px;font-size:10px;font-weight:700">' + inv.status.toUpperCase() + '</span></div><div class="meta"><div><b style="display:block;font-size:9px;color:#999;text-transform:uppercase">' + dtLabel + ' #</b>' + escHtml(inv.id) + '</div><div><b style="display:block;font-size:9px;color:#999;text-transform:uppercase">Date</b>' + fmDate(inv.date) + '</div><div><b style="display:block;font-size:9px;color:#999;text-transform:uppercase">Bill To</b>' + escHtml((inv.cust && inv.cust.name) ? inv.cust.name : '') + '</div>' + (inv.due ? '<div><b style="display:block;font-size:9px;color:#999;text-transform:uppercase">Due</b>' + fmDate(inv.due) + '</div>' : '') + '</div><table><thead><tr><th>Item</th><th>Qty</th><th style="text-align:right">Unit Price</th><th style="text-align:right">Subtotal</th></tr></thead><tbody>' + items + '</tbody></table><div class="tot"><div class="tot-row"><span>Subtotal</span><span>' + cur + fm(inv.sub) + '</span></div>' + (inv.disc > 0 ? '<div class="tot-row"><span>Discount</span><span>- ' + cur + fm(inv.disc) + '</span></div>' : '') + (inv.vat > 0 ? '<div class="tot-row"><span>' + escHtml(inv.taxName || 'VAT') + '</span><span>' + cur + fm(inv.vat) + '</span></div>' : '') + '<div class="tot-row tot-grand"><span>Total</span><span>' + cur + fm(inv.grand) + '</span></div>' + (inv.paid > 0 && inv.status !== 'Paid' ? '<div class="tot-row"><span>Paid</span><span>' + cur + fm(inv.paid) + '</span></div><div class="tot-row" style="font-weight:700;color:#b00"><span>Balance</span><span>' + cur + fm(inv.bal) + '</span></div>' : '') + '</div>' + (bank ? '<div class="bank">' + bank + '</div>' : '') + (inv.remark ? '<p style="font-size:10px;color:#666;margin-top:8px"><b>Note:</b> ' + escHtml(inv.remark) + '</p>' : '') + (inv.pro && inv.pro.note ? '<p style="font-size:10px;color:#888;font-style:italic;margin-top:6px">' + escHtml(inv.pro.note) + '</p>' : '') + sig + '<div class="footer">Designed by John Ipadeola &mdash; &copy; 2026 AgoroX Technologies &mdash; SmartInvoice Pro</div></body></html>';
 var oldPrint = d.getElementById('print-preview-modal');
 if (oldPrint) { oldPrint.remove(); }
 var printOverlay = d.createElement('div');
@@ -1601,7 +1685,7 @@ doc.text(inv.pro.note, lm, y); y += 5;
 }
 doc.setDrawColor(220, 220, 220); doc.line(lm, y + 2, lm + rw, y + 2);
 doc.setFont('helvetica', 'normal'); doc.setFontSize(7); doc.setTextColor(170, 170, 170);
-doc.text('Powered by Ipadeola Agoro Technologies \u2014 SmartInvoice Pro', lm + rw / 2, y + 7, { align: 'center' });
+doc.text('\u00a9 2026 AgoroX Technologies \u2014 SmartInvoice Pro', lm + rw / 2, y + 7, { align: 'center' });
 var custName = (inv.cust && inv.cust.name) ? inv.cust.name.replace(/[^a-zA-Z0-9]/g, '_') : 'Customer';
 doc.save(inv.id + '_' + custName + '_SmartInvoicePro.pdf');
 addAudit('PDF saved', inv.id);
@@ -2441,7 +2525,7 @@ var HELP_SECTIONS = [
   '<div style="display:flex;flex-direction:column;gap:6px;font-size:.875rem">' +
   '<label style="display:flex;align-items:center;gap:8px"><input type="checkbox" style="width:16px;height:16px;accent-color:var(--accent)"> Set up your Business Profile (Settings &rarr; Profile)</label>' +
   '<label style="display:flex;align-items:center;gap:8px"><input type="checkbox" style="width:16px;height:16px;accent-color:var(--accent)"> Add your bank account details for invoice payment blocks</label>' +
-  '<label style="display:flex;align-items:center;gap:8px"><input type="checkbox" style="width:16px;height:16px;accent-color:var(--accent)"> Upload your logo and signature</label>' +
+  '<label style="display:flex;align-items:center;gap:8px"><input type="checkbox" style="width:16px;height:16px;accent-color:var(--accent)"> Upload your logo and signature (saved to cloud automatically)</label>' +
   '<label style="display:flex;align-items:center;gap:8px"><input type="checkbox" style="width:16px;height:16px;accent-color:var(--accent)"> Add at least 3 products or services to your Catalogue</label>' +
   '<label style="display:flex;align-items:center;gap:8px"><input type="checkbox" style="width:16px;height:16px;accent-color:var(--accent)"> Create your first invoice</label>' +
   '<label style="display:flex;align-items:center;gap:8px"><input type="checkbox" style="width:16px;height:16px;accent-color:var(--accent)"> Export a backup (Settings &rarr; Profile &rarr; Data)</label>' +
@@ -2592,26 +2676,31 @@ var HELP_SECTIONS = [
   '<li>Overdue items show a red left border and an "X days overdue" label</li>' +
   '</ul>' +
   '<b>Sending Reminders:</b>' +
-  '<p style="font-size:.875rem;color:var(--text-2);margin:4px 0 0">Use the <b>WhatsApp</b> button on an overdue invoice to send a customised payment reminder. Go to Settings &rarr; Reminders to manage your reminder message templates.</p>'
+  '<p style="font-size:.875rem;color:var(--text-2);margin:4px 0 0">Tap <b>Share</b> on an overdue invoice, then choose <b>WhatsApp</b> to send a customised payment reminder. Go to Settings &rarr; Reminders to manage your reminder message templates.</p>'
 },
 
 /* SHARING */
-{ cat: 'sharing', title: 'Sharing via WhatsApp',
+{ cat: 'sharing', title: 'Sharing Invoices',
   body:
-  '<p style="margin-bottom:10px">Every invoice, quote, and receipt can be shared directly via WhatsApp in two ways:</p>' +
-  '<b>Option 1 &mdash; Text Summary</b>' +
-  '<p style="font-size:.875rem;color:var(--text-2);margin:4px 0 12px">Tap <b>WhatsApp</b> on the invoice toolbar. A pre-filled message is generated containing the document ID, customer name, itemised list, totals, and bank details. You can review and edit the message before sending.</p>' +
-  '<b>Option 2 &mdash; Image Share</b>' +
-  '<p style="font-size:.875rem;color:var(--text-2);margin:4px 0 12px">In the WhatsApp share modal, tap <b>Generate Invoice Image</b>. The app renders the invoice as a PNG and uses your device native share sheet to share it directly into WhatsApp &mdash; no saving required.</p>' +
-  '<div style="background:var(--amber-bg);border:1px solid var(--amber-bd);padding:12px 14px;font-size:.82rem;color:var(--amber);margin-top:8px">' +
-  '<b>Note:</b> Image sharing uses the Web Share API. It works on Chrome (Android), Safari (iOS), and most modern mobile browsers. On desktop or unsupported browsers, a fallback Print/PDF dialog opens instead.</div>'
+  '<p style="margin-bottom:12px">Every invoice, quote, and receipt has a single <b>Share</b> button in the toolbar. Tapping it presents all available sharing options for your device.</p>' +
+  '<b>On mobile (iPhone, Android)</b>' +
+  '<p style="font-size:.875rem;color:var(--text-2);margin:4px 0 12px">The app uses your device native share sheet automatically &mdash; the same one used by all other apps on your phone. You will see WhatsApp, Gmail, Messages, and any other apps you have installed. No extra steps.</p>' +
+  '<b>On browsers without native sharing</b>' +
+  '<p style="font-size:.875rem;color:var(--text-2);margin:4px 0 10px">A share options panel slides up with:</p>' +
+  '<div style="display:flex;flex-direction:column;gap:8px;font-size:.875rem">' +
+  '<div style="border:1px solid var(--border);padding:12px"><b>WhatsApp</b> &mdash; Recommended. Pre-filled invoice summary opens directly in WhatsApp.</div>' +
+  '<div style="border:1px solid var(--border);padding:12px"><b>Print / Save PDF</b> &mdash; Opens your device print dialog. Choose Save as PDF.</div>' +
+  '<div style="border:1px solid var(--border);padding:12px"><b>Generate Image</b> &mdash; Renders the invoice as a picture to share anywhere.</div>' +
+  '<div style="border:1px solid var(--border);padding:12px"><b>SMS</b> &mdash; Sends a text message with invoice details.</div>' +
+  '<div style="border:1px solid var(--border);padding:12px"><b>Email</b> &mdash; Opens your email app with the invoice pre-filled.</div>' +
+  '</div>'
 },
 { cat: 'sharing', title: 'Printing and Saving as PDF',
   body:
   '<p style="margin-bottom:10px">SmartInvoice Pro uses your device native print system to produce professional PDF invoices &mdash; no third-party software needed.</p>' +
   '<ol style="margin:8px 0 12px 18px;font-size:.875rem;line-height:2">' +
   '<li>Open the invoice from <b>History</b></li>' +
-  '<li>Tap <b>Print / Save PDF</b> in the toolbar</li>' +
+  '<li>Tap <b>Share</b> in the toolbar, then choose <b>Print / Save PDF</b></li>' +
   '<li>Your device print dialog opens &mdash; the invoice fills the page automatically</li>' +
   '<li>To save as PDF: choose <b>Save as PDF</b> as the printer destination</li>' +
   '<li>To print physically: select your printer and tap Print</li>' +
@@ -2648,11 +2737,15 @@ var HELP_SECTIONS = [
   '<tr><td style="padding:7px 10px;border:1px solid var(--border)">Business Name</td><td style="padding:7px 10px;border:1px solid var(--border)">Header of every document</td></tr>' +
   '<tr><td style="padding:7px 10px;border:1px solid var(--border)">Phone / Email</td><td style="padding:7px 10px;border:1px solid var(--border)">Header contact block</td></tr>' +
   '<tr><td style="padding:7px 10px;border:1px solid var(--border)">Address</td><td style="padding:7px 10px;border:1px solid var(--border)">Header address block</td></tr>' +
-  '<tr><td style="padding:7px 10px;border:1px solid var(--border)">Logo</td><td style="padding:7px 10px;border:1px solid var(--border)">Top-left of all documents</td></tr>' +
-  '<tr><td style="padding:7px 10px;border:1px solid var(--border)">Signature</td><td style="padding:7px 10px;border:1px solid var(--border)">Bottom signature block</td></tr>' +
+  '<tr><td style="padding:7px 10px;border:1px solid var(--border)">Logo</td><td style="padding:7px 10px;border:1px solid var(--border)">Top-left of all documents &mdash; uploaded to cloud storage</td></tr>' +
+  '<tr><td style="padding:7px 10px;border:1px solid var(--border)">Signature</td><td style="padding:7px 10px;border:1px solid var(--border)">Bottom signature block &mdash; uploaded to cloud storage</td></tr>' +
+  '<tr><td style="padding:7px 10px;border:1px solid var(--border)">NQR Code</td><td style="padding:7px 10px;border:1px solid var(--border)">Payment QR block on invoices &mdash; uploaded to cloud storage</td></tr>' +
   '<tr><td style="padding:7px 10px;border:1px solid var(--border)">Bank Name / Account No. / Account Name</td><td style="padding:7px 10px;border:1px solid var(--border)">Payment details block on invoices</td></tr>' +
   '<tr><td style="padding:7px 10px;border:1px solid var(--border)">Invoice Prefix &amp; Starting Number</td><td style="padding:7px 10px;border:1px solid var(--border)">Auto-generated invoice IDs (e.g. INV-0001)</td></tr>' +
-  '</table>'
+  '</table>' +
+  '<div style="background:var(--green-bg);border:1px solid var(--green-bd);padding:12px 14px;font-size:.82rem;color:var(--green);margin-top:12px">' +
+  '<b>Cloud Storage:</b> Your logo, signature, and NQR code are uploaded to secure cloud storage when you save them. This means they are available on all your activated devices automatically &mdash; no need to re-upload on each device.' +
+  '</div>'
 },
 { cat: 'settings', title: 'Product and Service Catalogue',
   body:
@@ -2754,7 +2847,7 @@ var HELP_SECTIONS = [
   '<li>Tap <b>Enable PIN Lock</b></li>' +
   '</ol>' +
   '<b>Forgot your PIN?</b>' +
-  '<p style="font-size:.875rem;color:var(--text-2);margin:4px 0 0">Contact support at <a href="https://wa.me/2348034129684" target="_blank" rel="noopener">wa.me/2348034129684</a>. PIN reset requires verifying your licence key and device fingerprint.</p>'
+  '<p style="font-size:.875rem;color:var(--text-2);margin:4px 0 0">Contact support via WhatsApp. PIN reset requires verifying your licence key and the device the licence is registered to. You will be asked to provide your Paystack payment reference or licence key.</p>'
 },
 { cat: 'security', title: 'Audit Log',
   body:
@@ -2774,15 +2867,24 @@ var HELP_SECTIONS = [
 /* DATA & BACKUP */
 { cat: 'data', title: 'Data Storage and Privacy',
   body:
-  '<div style="background:var(--blue-bg);border:1px solid var(--blue-bd);padding:12px 14px;font-size:.875rem;color:var(--blue);margin-bottom:12px">' +
-  '<b>Your data stays on your device.</b> SmartInvoice Pro stores all invoices, customers, catalogue items, and settings in your browser localStorage. No data is sent to any third-party server.</div>' +
-  '<b>What this means:</b>' +
+  '<div style="background:var(--green-bg);border:1px solid var(--green-bd);padding:12px 14px;font-size:.875rem;color:var(--green);margin-bottom:12px">' +
+  '<b>Your invoice data stays on your device.</b> Invoices, customers, catalogue items, and settings are stored in your browser localStorage. They are never sent to any server.</div>' +
+  '<b>What is stored locally (device only):</b>' +
   '<ul style="margin:8px 0 12px 18px;font-size:.875rem;color:var(--text-2);line-height:1.9">' +
-  '<li>Your business data is private by default</li>' +
-  '<li>The app works fully offline after first load</li>' +
-  '<li>Data does <b>not</b> sync between devices automatically</li>' +
-  '<li>Clearing browser data or switching browsers will erase data</li>' +
-  '</ul>'
+  '<li>All invoices, quotes, and receipts</li>' +
+  '<li>Customer directory and product catalogue</li>' +
+  '<li>Settings, PIN, and audit log</li>' +
+  '<li>Your licence key</li>' +
+  '</ul>' +
+  '<b>What is stored in the cloud (secure file storage):</b>' +
+  '<ul style="margin:8px 0 12px 18px;font-size:.875rem;color:var(--text-2);line-height:1.9">' +
+  '<li>Your business logo</li>' +
+  '<li>Your signature</li>' +
+  '<li>Your NQR payment code image</li>' +
+  '</ul>' +
+  '<p style="font-size:.875rem;color:var(--text-2)">Image files are stored in encrypted cloud storage (Cloudflare R2). Only your activated devices can access them via a private URL. This enables your logo and signature to appear consistently across all your activated devices without re-uploading.</p>' +
+  '<div style="background:var(--amber-bg);border:1px solid var(--amber-bd);padding:10px 14px;font-size:.82rem;color:var(--amber);margin-top:10px">' +
+  '<b>Important:</b> Clearing your browser data will erase local app data (invoices, settings). However, your logo and signature remain safe in cloud storage and will reload automatically when you reopen the app.</div>'
 },
 { cat: 'data', title: 'Backup and Restore',
   body:
@@ -2808,44 +2910,55 @@ var HELP_SECTIONS = [
 /* PLANS */
 { cat: 'plans', title: 'Licence Plans Comparison',
   body:
-  '<p style="margin-bottom:10px">SmartInvoice Pro offers three annual licence plans. All plans include unlimited access to the core invoicing features.</p>' +
+  '<p style="margin-bottom:10px">SmartInvoice Pro offers three annual licence plans. All plans include unlimited access to core invoicing features.</p>' +
   '<table style="width:100%;border-collapse:collapse;font-size:.82rem">' +
   '<tr style="background:var(--surface-2)"><th style="padding:8px 10px;text-align:left;border:1px solid var(--border)">Feature</th><th style="padding:8px 10px;text-align:center;border:1px solid var(--border)">Micro<br><span style="font-size:.7rem;color:var(--text-3)">&#8358;12,500/yr</span></th><th style="padding:8px 10px;text-align:center;border:1px solid var(--border)">Medium<br><span style="font-size:.7rem;color:var(--text-3)">&#8358;19,500/yr</span></th><th style="padding:8px 10px;text-align:center;border:1px solid var(--accent)">Growth<br><span style="font-size:.7rem;color:var(--accent)">&#8358;27,500/yr</span></th></tr>' +
   '<tr><td style="padding:7px 10px;border:1px solid var(--border)">Unlimited invoices</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--green)">&#10003;</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--green)">&#10003;</td><td style="padding:7px 10px;border:1px solid var(--accent);text-align:center;color:var(--green)">&#10003;</td></tr>' +
   '<tr><td style="padding:7px 10px;border:1px solid var(--border)">Quotations &amp; Receipts</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--green)">&#10003;</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--green)">&#10003;</td><td style="padding:7px 10px;border:1px solid var(--accent);text-align:center;color:var(--green)">&#10003;</td></tr>' +
   '<tr><td style="padding:7px 10px;border:1px solid var(--border)">Customer directory</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--green)">&#10003;</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--green)">&#10003;</td><td style="padding:7px 10px;border:1px solid var(--accent);text-align:center;color:var(--green)">&#10003;</td></tr>' +
-  '<tr><td style="padding:7px 10px;border:1px solid var(--border)">WhatsApp &amp; Print sharing</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--green)">&#10003;</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--green)">&#10003;</td><td style="padding:7px 10px;border:1px solid var(--accent);text-align:center;color:var(--green)">&#10003;</td></tr>' +
+  '<tr><td style="padding:7px 10px;border:1px solid var(--border)">Share invoices (WhatsApp, PDF, Email, SMS)</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--green)">&#10003;</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--green)">&#10003;</td><td style="padding:7px 10px;border:1px solid var(--accent);text-align:center;color:var(--green)">&#10003;</td></tr>' +
+  '<tr><td style="padding:7px 10px;border:1px solid var(--border)">Cloud logo &amp; signature storage</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--green)">&#10003;</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--green)">&#10003;</td><td style="padding:7px 10px;border:1px solid var(--accent);text-align:center;color:var(--green)">&#10003;</td></tr>' +
   '<tr><td style="padding:7px 10px;border:1px solid var(--border)">Reports &amp; analytics</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--green)">&#10003;</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--green)">&#10003;</td><td style="padding:7px 10px;border:1px solid var(--accent);text-align:center;color:var(--green)">&#10003;</td></tr>' +
+  '<tr style="background:var(--accent-tint)"><td style="padding:7px 10px;border:1px solid var(--border)"><b>Devices supported</b></td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;font-weight:700">1</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;font-weight:700;color:var(--green)">3</td><td style="padding:7px 10px;border:1px solid var(--accent);text-align:center;font-weight:700;color:var(--green)">5</td></tr>' +
   '<tr><td style="padding:7px 10px;border:1px solid var(--border)">PIN lock security</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--text-3)">&#8212;</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--green)">&#10003;</td><td style="padding:7px 10px;border:1px solid var(--accent);text-align:center;color:var(--green)">&#10003;</td></tr>' +
   '<tr><td style="padding:7px 10px;border:1px solid var(--border)">Instalment plans</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--text-3)">&#8212;</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--green)">&#10003;</td><td style="padding:7px 10px;border:1px solid var(--accent);text-align:center;color:var(--green)">&#10003;</td></tr>' +
   '<tr><td style="padding:7px 10px;border:1px solid var(--border)">Reminder templates</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--text-3)">&#8212;</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--green)">&#10003;</td><td style="padding:7px 10px;border:1px solid var(--accent);text-align:center;color:var(--green)">&#10003;</td></tr>' +
-  '<tr><td style="padding:7px 10px;border:1px solid var(--border)">Multi-business</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--text-3)">&#8212;</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--text-3)">&#8212;</td><td style="padding:7px 10px;border:1px solid var(--accent);text-align:center;color:var(--green)">&#10003;</td></tr>' +
+  '<tr><td style="padding:7px 10px;border:1px solid var(--border)">Multi-business profiles</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--text-3)">&#8212;</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--text-3)">&#8212;</td><td style="padding:7px 10px;border:1px solid var(--accent);text-align:center;color:var(--green)">&#10003;</td></tr>' +
   '<tr><td style="padding:7px 10px;border:1px solid var(--border)">USSD &amp; NQR payment blocks</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--text-3)">&#8212;</td><td style="padding:7px 10px;border:1px solid var(--border);text-align:center;color:var(--text-3)">&#8212;</td><td style="padding:7px 10px;border:1px solid var(--accent);text-align:center;color:var(--green)">&#10003;</td></tr>' +
   '</table>'
 },
+{ cat: 'plans', title: 'Multi-Device Activation',
+  body:
+  '<p style="margin-bottom:10px">Medium and Growth plans allow you to activate the same licence key on multiple devices. Each device is registered the first time you activate the key on it.</p>' +
+  '<b>How to activate on a second device:</b>' +
+  '<ol style="margin:8px 0 12px 18px;font-size:.875rem;line-height:2">' +
+  '<li>Open SmartInvoice Pro on the new device</li>' +
+  '<li>Go to <b>Settings &rarr; Licence &rarr; Activate</b></li>' +
+  '<li>Enter the same licence key you used on your first device</li>' +
+  '<li>Tap <b>Activate Licence</b> &mdash; the key is verified and registered for this device</li>' +
+  '</ol>' +
+  '<b>Device limits:</b>' +
+  '<ul style="margin:8px 0 12px 18px;font-size:.875rem;color:var(--text-2);line-height:1.9">' +
+  '<li><b>Micro</b>: 1 device only. The key is fingerprint-locked to the first device it is activated on.</li>' +
+  '<li><b>Medium</b>: Up to 3 devices simultaneously.</li>' +
+  '<li><b>Growth</b>: Up to 5 devices simultaneously.</li>' +
+  '</ul>' +
+  '<b>If you reach your device limit:</b>' +
+  '<p style="font-size:.875rem;color:var(--text-2);margin:4px 0 0">Contact support via WhatsApp to deactivate an old device and free up a slot, or upgrade your plan for more devices.</p>'
+},
 { cat: 'plans', title: 'Purchasing and Activating a Licence',
   body:
-  '<b>How to purchase:</b>' +
-  '<ol style="margin:8px 0 12px 18px;font-size:.875rem;line-height:2">' +
-  '<li>Go to <b>Settings &rarr; Licence</b> and select your plan</li>' +
-  '<li>Tap the plan button to open the secure Paystack payment modal</li>' +
-  '<li>Pay with card, bank transfer, or USSD</li>' +
-  '<li>Your licence key is generated automatically and emailed to you</li>' +
-  '<li>The app activates immediately after successful payment</li>' +
-  '</ol>' +
-  '<b>Activating a key you already have:</b>' +
-  '<ol style="margin:8px 0 12px 18px;font-size:.875rem;line-height:2">' +
-  '<li>Go to <b>Settings &rarr; Licence</b> or tap <b>I have a key</b> on the demo wall</li>' +
-  '<li>Enter your key in the format <code style="background:var(--surface-2);padding:1px 5px">SIP-XXXX-XXXX-XXXX-XXXX</code></li>' +
-  '<li>Tap <b>Activate Licence</b></li>' +
-  '</ol>' +
-  '<b>Renewal:</b>' +
-  '<p style="font-size:.875rem;color:var(--text-2);margin:4px 0 12px">Licences are valid for 12 months. A renewal reminder appears 30 days before expiry.</p>' +
-  '<b>Support:</b>' +
-  '<p style="font-size:.875rem;color:var(--text-2);margin:4px 0 0">For payment issues or licence queries, contact <a href="https://wa.me/2348034129684" target="_blank" rel="noopener">wa.me/2348034129684</a></p>'
+  '<b>Step 1 &mdash; Choose your plan</b>' +
+  '<p style="font-size:.875rem;color:var(--text-2);margin:4px 0 12px">In the app, tap <b>Upgrade</b> on the demo banner or go to <b>Settings &rarr; Licence &rarr; Upgrade</b>. Select Micro, Medium, or Growth and tap <b>Buy Now</b>.</p>' +
+  '<b>Step 2 &mdash; Pay via Paystack</b>' +
+  '<p style="font-size:.875rem;color:var(--text-2);margin:4px 0 12px">A secure Paystack payment popup appears. Pay using your debit card, bank transfer, or USSD. Paystack is Nigeria&#39;s most trusted payment provider &mdash; your card details are never stored by SmartInvoice Pro.</p>' +
+  '<b>Step 3 &mdash; Licence generated automatically</b>' +
+  '<p style="font-size:.875rem;color:var(--text-2);margin:4px 0 12px">After payment is confirmed, your licence key is generated instantly and activated on your device. You do not need to enter it manually &mdash; activation is automatic.</p>' +
+  '<b>Step 4 &mdash; Activating on additional devices (Medium &amp; Growth)</b>' +
+  '<p style="font-size:.875rem;color:var(--text-2);margin:4px 0 12px">Go to <b>Settings &rarr; Licence</b> on the new device, tap <b>Enter Licence Key</b>, paste your key, and tap <b>Activate</b>. The key is validated and the device is registered.</p>' +
+  '<div style="background:var(--amber-bg);border:1px solid var(--amber-bd);padding:12px 14px;font-size:.82rem;color:var(--amber)">' +
+  '<b>Keep your licence key safe.</b> After purchase, your key is shown on screen and can be copied from Settings &rarr; Licence at any time. Store it in a safe place such as your email drafts or WhatsApp Saved Messages.</div>'
 },
-
-/* TROUBLESHOOTING */
 { cat: 'troubleshoot', title: 'App Not Loading or Blank Screen',
   body:
   '<ol style="margin:8px 0 12px 18px;font-size:.875rem;line-height:2">' +
@@ -2912,6 +3025,31 @@ var HELP_SECTIONS = [
   '</ol>' +
   '<p style="font-size:.875rem;color:var(--text-2)">This does not retroactively change existing invoice numbers. Only new invoices going forward use the corrected sequence.</p>'
 },
+{ cat: 'troubleshoot', title: 'Device Limit Reached',
+  body:
+  '<p style="margin-bottom:10px">If you see a message saying your device limit has been reached when activating a licence key, it means all available device slots for your plan are in use.</p>' +
+  '<b>Solutions:</b>' +
+  '<ul style="margin:8px 0 12px 18px;font-size:.875rem;color:var(--text-2);line-height:1.9">' +
+  '<li><b>Deactivate an old device</b>: Contact support via WhatsApp with your licence key. We will free up a slot so you can activate on the new device.</li>' +
+  '<li><b>Upgrade your plan</b>: Move from Micro (1 device) to Medium (3 devices) or Growth (5 devices) for more simultaneous activations.</li>' +
+  '</ul>' +
+  '<b>Device limits by plan:</b>' +
+  '<ul style="margin:8px 0 0 18px;font-size:.875rem;color:var(--text-2);line-height:1.9">' +
+  '<li>Micro SME &mdash; 1 device</li>' +
+  '<li>Medium SME &mdash; 3 devices</li>' +
+  '<li>Growth &mdash; 5 devices</li>' +
+  '</ul>'
+},
+{ cat: 'troubleshoot', title: 'Wrong Device (Micro Plan)',
+  body:
+  '<p style="font-size:.875rem;color:var(--text-2);margin-bottom:10px">The Micro plan is locked to a single device using a device fingerprint. If you see a message saying this device is not authorised, it means you are trying to use the licence on a different device or browser than it was originally activated on.</p>' +
+  '<b>Solutions:</b>' +
+  '<ul style="margin:8px 0 0 18px;font-size:.875rem;color:var(--text-2);line-height:1.9">' +
+  '<li>Return to the original device and browser where you first activated the key</li>' +
+  '<li>Upgrade to Medium or Growth for multi-device support</li>' +
+  '<li>Contact support to transfer your Micro licence to a new device (old device will be deactivated)</li>' +
+  '</ul>'
+},
 { cat: 'troubleshoot', title: 'Print or PDF is Cut Off',
   body:
   '<b>Recommended print settings:</b>' +
@@ -2926,11 +3064,31 @@ var HELP_SECTIONS = [
 },
 
 /* FAQ */
+{ cat: 'faq', title: 'How do I get access via a referral link?',
+  body: '<p style="font-size:.875rem;color:var(--text-2);margin-bottom:10px">If someone shared a SmartInvoice Pro link with you (e.g. a business contact or reseller), simply tap or click the link. It opens SmartInvoice Pro in your browser with their referral automatically saved.</p>' +
+  '<p style="font-size:.875rem;color:var(--text-2);margin-bottom:10px">When you purchase any plan through that link, the person who referred you receives a commission automatically &mdash; at no extra cost to you. The price is the same regardless of whether you use a referral link or not.</p>' +
+  '<p style="font-size:.875rem;color:var(--text-2)">The referral link looks like:<br><code style="background:var(--surface-2);padding:2px 6px;font-size:.8rem">https://smartinvoice.pages.dev/?ref=08034129684</code></p>'
+},
 { cat: 'faq', title: 'Can I use SmartInvoice Pro offline?',
-  body: '<p style="font-size:.875rem;color:var(--text-2)">Yes. After the first load, the entire application runs offline. Your data is stored locally on your device. The only features that require an internet connection are: purchasing a licence (Paystack), activating a licence key (server verification), and WhatsApp sharing (opens the WhatsApp app).</p>'
+  body:
+  '<p style="font-size:.875rem;color:var(--text-2);margin-bottom:10px">Yes. After the first load, the full invoicing app runs offline &mdash; creating invoices, recording payments, viewing reports, and accessing all your data works without internet.</p>' +
+  '<b>Features that require internet:</b>' +
+  '<ul style="margin:8px 0 0 18px;font-size:.875rem;color:var(--text-2);line-height:1.9">' +
+  '<li>Purchasing a licence (Paystack payment)</li>' +
+  '<li>Activating a licence key on a new device (server verification)</li>' +
+  '<li>Uploading your logo, signature, or NQR code (cloud storage)</li>' +
+  '<li>WhatsApp, SMS, and Email sharing (open the respective apps)</li>' +
+  '</ul>'
 },
 { cat: 'faq', title: 'Can I use it on multiple devices?',
-  body: '<p style="font-size:.875rem;color:var(--text-2);margin-bottom:10px">One licence key can be activated on one device at a time. To move to a new device, export a backup from the old device, import it on the new one, and re-activate your licence key.</p><p style="font-size:.875rem;color:var(--text-2)">If you need to run the same business on multiple devices simultaneously, contact support to discuss your requirements.</p>'
+  body: '<p style="font-size:.875rem;color:var(--text-2);margin-bottom:12px">Yes &mdash; depending on your plan:</p>' +
+  '<table style="width:100%;border-collapse:collapse;font-size:.875rem;margin-bottom:12px">' +
+  '<tr style="background:var(--surface-2)"><th style="padding:8px 10px;text-align:left;border:1px solid var(--border)">Plan</th><th style="padding:8px 10px;text-align:left;border:1px solid var(--border)">Devices Allowed</th></tr>' +
+  '<tr><td style="padding:8px 10px;border:1px solid var(--border)">Micro SME</td><td style="padding:8px 10px;border:1px solid var(--border)">1 device only &mdash; fingerprint locked</td></tr>' +
+  '<tr><td style="padding:8px 10px;border:1px solid var(--border)">Medium SME</td><td style="padding:8px 10px;border:1px solid var(--border)"><b>Up to 3 devices</b></td></tr>' +
+  '<tr><td style="padding:8px 10px;border:1px solid var(--border)">Growth</td><td style="padding:8px 10px;border:1px solid var(--border)"><b>Up to 5 devices</b></td></tr>' +
+  '</table>' +
+  '<p style="font-size:.875rem;color:var(--text-2)">Each device activates the same licence key independently. The app works offline once activated. If you exceed your device limit, activate on a new device by first deactivating on an old one &mdash; contact support via WhatsApp to deactivate a device.</p>'
 },
 { cat: 'faq', title: 'Will my data be lost if I clear the browser?',
   body: '<p style="font-size:.875rem;color:var(--text-2);margin-bottom:10px">Yes. Clearing browser data in your browser settings will erase all SmartInvoice Pro data including invoices, customers, and settings.</p><p style="font-size:.875rem;color:var(--text-2)"><b>Prevention:</b> Export a backup regularly from Settings &rarr; Profile &rarr; Data. Store the backup file in Google Drive or WhatsApp Saved Messages.</p>'
@@ -2939,13 +3097,19 @@ var HELP_SECTIONS = [
   body: '<p style="font-size:.875rem;color:var(--text-2)">Open the quotation from History, then tap <b>Duplicate</b> in the toolbar. A copy is created as a new document. Open the duplicate and change the document type from Quotation to Invoice, update the date and any other details, then save. You can then void the original quotation to keep records clean.</p>'
 },
 { cat: 'faq', title: 'How do I add my logo and signature?',
-  body: '<p style="font-size:.875rem;color:var(--text-2);margin-bottom:10px">Go to <b>Settings &rarr; Profile</b>. You will see upload buttons for both your Logo and Signature.</p><ul style="margin:0 0 10px 18px;font-size:.875rem;color:var(--text-2);line-height:1.9"><li><b>Logo</b>: PNG or JPG, max 200px tall on the document. Transparent PNG recommended.</li><li><b>Signature</b>: PNG of your handwritten signature. Max 160px wide on the document.</li></ul><p style="font-size:.875rem;color:var(--text-2)">Images are stored in your browser locally &mdash; no upload to any server.</p>'
+  body: '<p style="font-size:.875rem;color:var(--text-2);margin-bottom:10px">Go to <b>Settings &rarr; Profile</b>. You will see upload buttons for Logo, Signature, and NQR Code.</p>' +
+  '<ul style="margin:0 0 12px 18px;font-size:.875rem;color:var(--text-2);line-height:1.9">' +
+  '<li><b>Logo</b>: PNG or JPG. Transparent PNG recommended for best results on invoices.</li>' +
+  '<li><b>Signature</b>: PNG of your handwritten signature.</li>' +
+  '<li><b>NQR Code</b>: Your Nigeria Quick Response payment QR code image.</li>' +
+  '</ul>' +
+  '<p style="font-size:.875rem;color:var(--text-2)">Images are uploaded to secure cloud storage and are available on all your activated devices automatically. The app also keeps a local copy so images appear even when offline.</p>'
 },
 { cat: 'faq', title: 'Can I customise the invoice layout or colour?',
   body: '<p style="font-size:.875rem;color:var(--text-2)">The invoice document layout is fixed for a professional, consistent appearance. You can customise: your logo, signature, bank details, invoice prefix, footer message, and whether VAT and discount blocks appear. Full layout customisation is on the product roadmap for a future release. Contact support to express interest.</p>'
 },
 { cat: 'faq', title: 'How do I send a payment reminder?',
-  body: '<p style="font-size:.875rem;color:var(--text-2)">Open the unpaid or overdue invoice from <b>History</b>. Tap the <b>WhatsApp</b> button in the toolbar. Choose a reminder template (Gentle, Firm, or Final). The message is pre-filled with the customer name, invoice number, amount, and due date. Tap <b>Send via WhatsApp</b> to open WhatsApp with the message ready to send. Customise templates in <b>Settings &rarr; Reminders</b>.</p>'
+  body: '<p style="font-size:.875rem;color:var(--text-2)">Open the unpaid or overdue invoice from <b>History</b>. Tap the <b>Share</b> button in the toolbar, then choose <b>WhatsApp</b>. Choose a reminder template (Gentle, Firm, or Final). The message is pre-filled with the customer name, invoice number, amount, and due date. Tap <b>Send via WhatsApp</b> to open WhatsApp with the message ready to send. Customise templates in <b>Settings &rarr; Reminders</b>.</p>'
 },
 { cat: 'faq', title: 'How do I record a partial payment?',
   body: '<p style="font-size:.875rem;color:var(--text-2)">Open the invoice from History. Tap <b>Record Payment</b>. Enter the amount actually received &mdash; which can be less than the full invoice total. Tap <b>Save Payment</b>. The invoice status changes to <b>Partial</b> and the remaining balance is displayed. Record additional payments later until the balance reaches zero, at which point the status changes to <b>Paid</b> automatically.</p>'
@@ -3056,7 +3220,7 @@ html += '<div style="font-size:.72rem;font-weight:700;text-transform:uppercase;l
 html += '<a href="https://wa.me/2348034129684" target="_blank" rel="noopener" ';
 html += 'style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:10px 20px;font-size:.875rem;font-weight:700;text-decoration:none">';
 html += 'Chat with Support on WhatsApp</a>';
-html += '<div style="font-size:.72rem;color:var(--text-3);margin-top:10px">SmartInvoice Pro v' + APP_VERSION + ' &mdash; &copy; 2026 Ipadeola Agoro Technologies</div>';
+html += '<div style="font-size:.72rem;color:var(--text-3);margin-top:10px">SmartInvoice Pro v' + APP_VERSION + ' &mdash; &copy; 2026 AgoroX Technologies</div>';
 html += '</div>';
 
 return html;
@@ -3982,7 +4146,9 @@ toast('License expires in ' + lic.daysLeft + ' days', 'warn');
 } else if (lic.status === 'grace') {
 toast('License in grace period: ' + lic.daysLeft + ' days remaining', 'warn');
 } else if (lic.status === 'expired') {
-toast('License expired \u2014 activate a new key to continue', 'error');
+toast('License expired — activate a new key to continue', 'error');
+} else if (lic.status === 'device_mismatch') {
+toast('This device is not authorised for your Micro plan. Upgrade to Medium or Growth for multi-device support.', 'error');
 }
 }
 }
@@ -4138,7 +4304,7 @@ if ('serviceWorker' in navigator && location.protocol === 'https:') {
 
   /* ── Config ─────────────────────────────────────────────── */
   var PS_PUBLIC_KEY = 'pk_live_b1a047d4fd60091390ef56af4cb32d8ee61d386d';
-  var API_BASE      = 'https://YOUR_PROJECT_ID.supabase.co/functions/v1';
+  var API_BASE      = 'https://smartinvoice-worker.YOUR_SUBDOMAIN.workers.dev';
 
   /* ── Plan definitions ────────────────────────────────────── */
   var PLAN_MAP = {
@@ -4341,7 +4507,7 @@ if ('serviceWorker' in navigator && location.protocol === 'https:') {
       label: 'SmartInvoice Pro — ' + plan.name,
 
       callback: function (response) {
-        /* Payment succeeded on Paystack's end */
+        /* Payment succeeded on Paystack end */
         window.closePayModal();
         onPaymentSuccess(response.reference, email, deviceId, planCode);
       },
@@ -4352,6 +4518,7 @@ if ('serviceWorker' in navigator && location.protocol === 'https:') {
       }
     });
 
+    window._sipCurrentPlanCode = planCode; // used by verifyWithBackend
     handler.openIframe();
   };
 
@@ -4370,50 +4537,35 @@ if ('serviceWorker' in navigator && location.protocol === 'https:') {
 
   /* ── Verify with backend and get license ─────────────────── */
   function verifyWithBackend(reference, email, deviceId) {
-    var url = (API_BASE || '') + '/api/payment/verify?' +
-      'reference=' + encodeURIComponent(reference) +
-      '&email='     + encodeURIComponent(email) +
-      '&deviceId='  + encodeURIComponent(deviceId);
+    var apiBase = (typeof API_BASE !== 'undefined' && API_BASE) ? API_BASE : '';
+    var planCode = window._sipCurrentPlanCode || null;
+    var refCode  = (function(){ try { return localStorage.getItem('sip_referral_code') || ''; } catch(e){ return ''; } })();
 
-    fetch(url)
-      .then(function (r) { return r.json(); })
-      .then(function (data) {
-        if (data.status === 'active' && data.licenseKey) {
-          showLicenseResult(data.licenseKey, reference, data.planCode);
+    if (!apiBase) { showLicenseResult(null, reference, planCode); return; }
+
+    fetch(apiBase + '/verify-payment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ reference: reference, planCode: planCode, referralCode: refCode })
+    })
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if (data.licenseKey) {
+          showLicenseResult(data.licenseKey, reference, data.tier || planCode);
+          // Link to account if user is signed in
+          if (window.__AUTH__ && window.__AUTH__.isSignedIn()) {
+            window.__AUTH__.linkLicence(data.licenseKey);
+          }
         } else {
-          /* Webhook may not have fired yet — poll */
-          pollForLicense(email, deviceId, reference, 0);
+          showLicenseResult(null, reference, planCode);
         }
       })
-      .catch(function () {
-        /* Backend unreachable — show reference */
-        showLicenseResult(null, reference, null);
+      .catch(function() {
+        showLicenseResult(null, reference, planCode);
       });
   }
 
-  /* ── Poll backend until license appears ──────────────────── */
-  function pollForLicense(email, deviceId, reference, attempt) {
-    if (attempt > 24) {          // max 2 minutes (24 × 5s)
-      showLicenseResult(null, reference, null);
-      return;
-    }
-    setTimeout(function () {
-      fetch((API_BASE || '') + '/api/license?' +
-            'email=' + encodeURIComponent(email) +
-            '&deviceId=' + encodeURIComponent(deviceId))
-        .then(function (r) { return r.json(); })
-        .then(function (data) {
-          if (data.status === 'active' && data.licenseKey) {
-            showLicenseResult(data.licenseKey, reference, data.planCode);
-          } else {
-            pollForLicense(email, deviceId, reference, attempt + 1);
-          }
-        })
-        .catch(function () {
-          pollForLicense(email, deviceId, reference, attempt + 1);
-        });
-    }, 5000);
-  }
+  /* pollForLicense removed — /verify-payment is synchronous */
 
   /* ── Show license key result modal ──────────────────────── */
   function showLicenseResult(licenseKey, reference, planCode) {
@@ -4515,15 +4667,17 @@ if ('serviceWorker' in navigator && location.protocol === 'https:') {
     var deviceId = getDeviceId();
     if (!email || !API_BASE) return;
 
-    fetch((API_BASE || '') + '/api/license?' +
-          'email=' + encodeURIComponent(email) +
-          '&deviceId=' + encodeURIComponent(deviceId))
-      .then(function (r) { return r.json(); })
-      .then(function (data) {
-        if (data.status === 'active' && data.licenseKey && window.__LIC__) {
-          window.__LIC__.validate(data.licenseKey).then(function (result) {
+    // Use signed-in account to restore licence
+    if (window.__AUTH__ && window.__AUTH__.isSignedIn()) {
+      fetch((API_BASE || '') + '/auth/me', {
+        headers: { 'Authorization': 'Bearer ' + window.__AUTH__.getToken() }
+      })
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if (data.licenseKey && window.__LIC__) {
+          window.__LIC__.validate(data.licenseKey).then(function(result) {
             if (result.valid) {
-              window.__LIC__.fingerprint().then(function (fp) {
+              window.__LIC__.fingerprint().then(function(fp) {
                 window.__LIC__.save(result, fp, data.licenseKey);
                 if (window.__APP__ && window.__APP__.reloadLicense) {
                   window.__APP__.reloadLicense();
@@ -4533,8 +4687,305 @@ if ('serviceWorker' in navigator && location.protocol === 'https:') {
           });
         }
       })
-      .catch(function () { /* backend not yet configured — silent */ });
-  });
+      .catch(function() {});
+    }
+  }); // end window.addEventListener load
+
+})();
+</script>
+
+<!-- App footer -->
+<div id="app-footer">
+  <strong>Designed by John Ipadeola</strong> &mdash; &copy; 2026 AgoroX Technologies. All Rights Reserved.
+</div>
+
+<!-- Auth modal -->
+<div id="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
+  <div class="auth-card">
+    <div class="auth-card__logo">SmartInvoice Pro</div>
+    <div class="auth-card__sub" id="auth-card-sub">Save your licence across all your devices</div>
+    <div class="auth-tabs" id="auth-tabs">
+      <button class="auth-tab auth-tab--active" id="auth-tab-signin" onclick="window.__AUTH__.switchTab('signin')">Sign In</button>
+      <button class="auth-tab" id="auth-tab-signup" onclick="window.__AUTH__.switchTab('signup')">Create Account</button>
+    </div>
+    <div id="auth-err" class="auth-err"></div>
+    <!-- Sign In -->
+    <div id="auth-panel-signin">
+      <div class="auth-field"><label for="auth-si-email">Email</label><input type="email" id="auth-si-email" autocomplete="email" inputmode="email" placeholder="you@example.com"></div>
+      <div class="auth-field"><label for="auth-si-pass">Password</label><input type="password" id="auth-si-pass" autocomplete="current-password" placeholder="Your password"></div>
+      <button class="btn btn--primary btn--block" id="auth-si-btn" onclick="window.__AUTH__.signIn()">Sign In</button>
+      <div class="auth-switch">No account? <a onclick="window.__AUTH__.switchTab('signup')">Create one</a></div>
+    </div>
+    <!-- Sign Up -->
+    <div id="auth-panel-signup" style="display:none">
+      <div class="auth-field"><label for="auth-su-name">Full Name</label><input type="text" id="auth-su-name" autocomplete="name" placeholder="e.g. Adaeze Okonkwo"></div>
+      <div class="auth-field"><label for="auth-su-email">Email</label><input type="email" id="auth-su-email" autocomplete="email" inputmode="email" placeholder="you@example.com"></div>
+      <div class="auth-field"><label for="auth-su-pass">Password <span style="font-weight:400;font-size:.7rem;text-transform:none">(min 6 characters)</span></label><input type="password" id="auth-su-pass" autocomplete="new-password" placeholder="Choose a password"></div>
+      <button class="btn btn--primary btn--block" id="auth-su-btn" onclick="window.__AUTH__.signUp()">Create Account</button>
+      <div class="auth-switch">Have an account? <a onclick="window.__AUTH__.switchTab('signin')">Sign in</a></div>
+    </div>
+    <!-- Account info panel -->
+    <div id="auth-panel-account" style="display:none">
+      <div style="text-align:center;padding:8px 0 16px">
+        <div id="auth-user-avatar-lg" style="width:56px;height:56px;border-radius:50%;background:var(--accent);color:#fff;font-size:1.2rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 12px"></div>
+        <div id="auth-user-name" style="font-weight:700;font-size:1rem;margin-bottom:4px"></div>
+        <div id="auth-user-email" style="font-size:.82rem;color:var(--text-2)"></div>
+        <div id="auth-user-plan" style="font-size:.82rem;color:var(--green);font-weight:600;margin-top:6px"></div>
+      </div>
+      <button class="btn btn--ghost btn--block" onclick="window.__AUTH__.signOut()" style="margin-top:8px">Sign Out</button>
+    </div>
+    <button onclick="window.__AUTH__.closeModal()" style="position:absolute;top:14px;right:14px;width:28px;height:28px;background:var(--surface-3);border:1px solid var(--border);color:var(--text-2);font-size:.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center">&#215;</button>
+  </div>
+</div>
+
+
+<!-- SmartInvoice Pro — Authentication -->
+<script>
+(function() {
+'use strict';
+
+var AUTH_KEY  = 'sip_auth_token';
+var USER_KEY  = 'sip_auth_user';
+var API_AUTH  = (typeof API_BASE !== 'undefined' && API_BASE) ? API_BASE : '';
+
+var _state = { user: null, token: null };
+
+function _loadSession() {
+  try {
+    var token = localStorage.getItem(AUTH_KEY);
+    var user  = JSON.parse(localStorage.getItem(USER_KEY) || 'null');
+    if (token && user) { _state.token = token; _state.user = user; _updateUI(); }
+  } catch(e) {}
+}
+
+function _saveSession(token, user) {
+  try {
+    localStorage.setItem(AUTH_KEY, token);
+    localStorage.setItem(USER_KEY, JSON.stringify(user));
+  } catch(e) {}
+  _state.token = token; _state.user = user; _updateUI();
+}
+
+function _clearSession() {
+  try { localStorage.removeItem(AUTH_KEY); localStorage.removeItem(USER_KEY); } catch(e) {}
+  _state.token = null; _state.user = null; _updateUI();
+}
+
+function _initials(name) {
+  return (name || '?').split(' ').slice(0,2).map(function(n){ return n[0]; }).join('').toUpperCase();
+}
+
+function _updateUI() {
+  var signinBtn = document.getElementById('auth-signin-btn');
+  var avatar    = document.getElementById('auth-avatar');
+  if (!signinBtn || !avatar) return;
+  if (_state.user) {
+    signinBtn.style.display = 'none';
+    avatar.style.display    = 'flex';
+    avatar.textContent      = _initials(_state.user.name);
+    avatar.title            = _state.user.name + ' (' + _state.user.email + ')';
+  } else {
+    signinBtn.style.display = 'flex';
+    avatar.style.display    = 'none';
+  }
+}
+
+function _setLoading(btnId, loading, label) {
+  var btn = document.getElementById(btnId);
+  if (!btn) return;
+  btn.disabled    = loading;
+  btn.textContent = loading ? 'Please wait…' : label;
+}
+
+function _setErr(msg) {
+  var el = document.getElementById('auth-err');
+  if (el) el.textContent = msg || '';
+}
+
+function _afterAuth(data) {
+  _saveSession(data.token, data.user);
+  // Auto-activate licence if user has one and none active locally
+  if (data.user && data.user.licenseKey) {
+    if (window.__LIC__) {
+      var lic = window.__LIC__.check();
+      if (lic.status === 'none' || lic.status === 'expired') {
+        window.__LIC__.validate(data.user.licenseKey).then(function(result) {
+          if (result.valid) {
+            window.__LIC__.fingerprint().then(function(fp) {
+              window.__LIC__.save(result, fp, data.user.licenseKey);
+              if (window.__APP__) {
+                if (window.__APP__.reloadLicense) window.__APP__.reloadLicense();
+                if (window.__APP__.toast) window.__APP__.toast('Licence activated from your account', 'success');
+              }
+            });
+          }
+        });
+      }
+    }
+  }
+  window.__AUTH__.closeModal();
+  if (window.__APP__ && window.__APP__.toast)
+    window.__APP__.toast('Signed in as ' + data.user.name, 'success');
+}
+
+var AUTH = window.__AUTH__ = {
+  openModal: function(panel) {
+    var modal = document.getElementById('auth-modal');
+    if (!modal) return;
+    modal.classList.add('modal--show');
+    var tabs = document.getElementById('auth-tabs');
+    var accPanel = document.getElementById('auth-panel-account');
+    if (panel === 'account' && _state.user) {
+      if (tabs) tabs.style.display = 'none';
+      document.getElementById('auth-panel-signin').style.display = 'none';
+      document.getElementById('auth-panel-signup').style.display = 'none';
+      if (accPanel) {
+        accPanel.style.display = 'block';
+        var avatarLg = document.getElementById('auth-user-avatar-lg');
+        if (avatarLg) avatarLg.textContent = _initials(_state.user.name);
+        var nameEl   = document.getElementById('auth-user-name');
+        if (nameEl)   nameEl.textContent   = _state.user.name;
+        var emailEl  = document.getElementById('auth-user-email');
+        if (emailEl)  emailEl.textContent  = _state.user.email;
+        var planEl   = document.getElementById('auth-user-plan');
+        if (planEl) {
+          planEl.textContent = _state.user.plan
+            ? (_state.user.plan === 'M' ? 'Micro SME' : _state.user.plan === 'X' ? 'Medium SME' : 'Growth') + ' Plan Active'
+            : '';
+        }
+      }
+    } else {
+      if (tabs) tabs.style.display = 'flex';
+      if (accPanel) accPanel.style.display = 'none';
+      AUTH.switchTab(panel || 'signin');
+    }
+    _setErr('');
+    // Focus first input after paint
+    setTimeout(function() {
+      var input = modal.querySelector('input:not([style*="display:none"])');
+      if (input) input.focus();
+    }, 100);
+  },
+
+  closeModal: function() {
+    var modal = document.getElementById('auth-modal');
+    if (modal) modal.classList.remove('modal--show');
+  },
+
+  switchTab: function(tab) {
+    var isSignin = tab === 'signin';
+    document.getElementById('auth-panel-signin').style.display = isSignin ? 'block' : 'none';
+    document.getElementById('auth-panel-signup').style.display = isSignin ? 'none'  : 'block';
+    var t1 = document.getElementById('auth-tab-signin');
+    var t2 = document.getElementById('auth-tab-signup');
+    if (t1) t1.classList.toggle('auth-tab--active', isSignin);
+    if (t2) t2.classList.toggle('auth-tab--active', !isSignin);
+    _setErr('');
+    setTimeout(function() {
+      var panel = document.getElementById(isSignin ? 'auth-panel-signin' : 'auth-panel-signup');
+      if (panel) { var inp = panel.querySelector('input'); if (inp) inp.focus(); }
+    }, 60);
+  },
+
+  signIn: async function() {
+    var email = (document.getElementById('auth-si-email').value || '').trim();
+    var pass  = document.getElementById('auth-si-pass').value || '';
+    _setErr('');
+    if (!email || !pass) { _setErr('Please enter your email and password.'); return; }
+    if (!API_AUTH) { _setErr('Backend not configured.'); return; }
+    _setLoading('auth-si-btn', true, 'Sign In');
+    try {
+      var r    = await fetch(API_AUTH + '/auth/login', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, password: pass })
+      });
+      var data = await r.json();
+      if (!r.ok) { _setErr(data.error || 'Sign-in failed.'); return; }
+      _afterAuth(data);
+    } catch(e) { _setErr('Network error. Check your connection.'); }
+    finally { _setLoading('auth-si-btn', false, 'Sign In'); }
+  },
+
+  signUp: async function() {
+    var name  = (document.getElementById('auth-su-name').value  || '').trim();
+    var email = (document.getElementById('auth-su-email').value || '').trim();
+    var pass  = document.getElementById('auth-su-pass').value   || '';
+    _setErr('');
+    if (!name)           { _setErr('Please enter your name.'); return; }
+    if (!email)          { _setErr('Please enter your email address.'); return; }
+    if (pass.length < 6) { _setErr('Password must be at least 6 characters.'); return; }
+    if (!API_AUTH) { _setErr('Backend not configured.'); return; }
+    _setLoading('auth-su-btn', true, 'Create Account');
+    try {
+      var r    = await fetch(API_AUTH + '/auth/signup', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name, email: email, password: pass })
+      });
+      var data = await r.json();
+      if (!r.ok) { _setErr(data.error || 'Sign-up failed.'); return; }
+      // Link existing licence to account if one is active
+      var lic = window.__LIC__ ? window.__LIC__.check() : null;
+      if (lic && (lic.status === 'active' || lic.status === 'expiring')) {
+        var stored = window.__LIC__.load ? window.__LIC__.load() : null;
+        if (stored && stored.key) {
+          fetch(API_AUTH + '/auth/link-licence', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + data.token },
+            body: JSON.stringify({ licenseKey: stored.key })
+          }).catch(function(){});
+        }
+      }
+      _afterAuth(data);
+    } catch(e) { _setErr('Network error. Check your connection.'); }
+    finally { _setLoading('auth-su-btn', false, 'Create Account'); }
+  },
+
+  signOut: function() {
+    _clearSession();
+    AUTH.closeModal();
+    if (window.__APP__ && window.__APP__.toast)
+      window.__APP__.toast('Signed out');
+  },
+
+  linkLicence: async function(licenceKey) {
+    if (!_state.token || !API_AUTH) return;
+    try {
+      await fetch(API_AUTH + '/auth/link-licence', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + _state.token },
+        body: JSON.stringify({ licenseKey: licenceKey })
+      });
+    } catch(e) {}
+  },
+
+  getToken: function() { return _state.token; },
+  getUser:  function() { return _state.user; },
+  isSignedIn: function() { return !!_state.user; }
+};
+
+// Close modal on backdrop click
+document.addEventListener('click', function(e) {
+  var modal = document.getElementById('auth-modal');
+  if (modal && e.target === modal) AUTH.closeModal();
+});
+
+// Close on Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') AUTH.closeModal();
+  if (e.key === 'Enter') {
+    var modal = document.getElementById('auth-modal');
+    if (!modal || !modal.classList.contains('modal--show')) return;
+    if (document.getElementById('auth-panel-signin').style.display !== 'none') AUTH.signIn();
+    else if (document.getElementById('auth-panel-signup').style.display !== 'none') AUTH.signUp();
+  }
+});
+
+// Boot: restore session
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', _loadSession);
+} else {
+  _loadSession();
+}
 
 })();
 </script>
@@ -5279,7 +5730,7 @@ if ('serviceWorker' in navigator && location.protocol === 'https:') {
 (function () {
   'use strict';
 
-  var API_BASE = 'https://YOUR_PROJECT_ID.supabase.co/functions/v1';
+  var API_BASE = 'https://smartinvoice-worker.YOUR_SUBDOMAIN.workers.dev';
   var LS_REF   = 'sip_referral_code';
 
   /* ── 1. Capture referral code from URL ───────────────────── */
@@ -5418,7 +5869,7 @@ if ('serviceWorker' in navigator && location.protocol === 'https:') {
 (function () {
   'use strict';
 
-  var API_BASE = 'https://YOUR_PROJECT_ID.supabase.co/functions/v1';
+  var API_BASE = 'https://smartinvoice-worker.YOUR_SUBDOMAIN.workers.dev';
   var LS_REF   = 'sip_referral_code';
 
   /* ── 1. Capture referral code from URL ───────────────────── */
@@ -5491,7 +5942,7 @@ if ('serviceWorker' in navigator && location.protocol === 'https:') {
   window.verifyWithBackend = function (reference, email, deviceId, planCode) {
     var ref = getStoredRef();
 
-    fetch(API_BASE + '/api/payments/verify', {
+    fetch(API_BASE + '/verify-payment', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

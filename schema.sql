@@ -59,3 +59,28 @@ CREATE INDEX IF NOT EXISTS idx_licenses_reference ON licenses(reference);
 CREATE INDEX IF NOT EXISTS idx_payouts_agent      ON payouts(agent_phone);
 CREATE INDEX IF NOT EXISTS idx_payouts_status     ON payouts(status);
 CREATE INDEX IF NOT EXISTS idx_agents_active      ON agents(is_active);
+
+CREATE TABLE IF NOT EXISTS device_activations (
+  id            INTEGER PRIMARY KEY AUTOINCREMENT,
+  license_key   TEXT NOT NULL,
+  device_fp     TEXT NOT NULL,
+  plan          TEXT NOT NULL,
+  activated_at  TEXT NOT NULL,
+  UNIQUE(license_key, device_fp)
+);
+
+CREATE INDEX IF NOT EXISTS idx_devices_key ON device_activations(license_key);
+
+-- ── Users (authentication) ────────────────────────────────────
+CREATE TABLE IF NOT EXISTS users (
+  id            INTEGER PRIMARY KEY AUTOINCREMENT,
+  name          TEXT    NOT NULL,
+  email         TEXT    NOT NULL UNIQUE,
+  password_hash TEXT    NOT NULL,
+  license_key   TEXT,
+  plan          TEXT,
+  created_at    TEXT    NOT NULL,
+  last_login    TEXT
+);
+
+CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);

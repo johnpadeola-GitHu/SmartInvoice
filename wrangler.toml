@@ -3,18 +3,18 @@ main               = "worker.js"
 compatibility_date = "2024-09-23"
 
 # ── D1 Database ───────────────────────────────────────────────
-# Run first:  wrangler d1 create smartinvoice
-# Then paste the database_id below
+# Step 1: Run: wrangler d1 create smartinvoice
+# Step 2: Paste the database_id you receive below
 [[d1_databases]]
 binding       = "DB"
 database_name = "smartinvoice"
-database_id   = "32cb3466-9a63-48d7-be33-cf47962027aa"
+database_id   = "PASTE_YOUR_D1_DATABASE_ID_HERE"
 
 # ── R2 Storage ────────────────────────────────────────────────
-# Run first:  wrangler r2 bucket create smartinvoice-files
-# Then enable public access in Cloudflare Dashboard:
-#   R2 → smartinvoice-files → Settings → Public Access → Enable
-# Copy the public URL and paste it as R2_PUBLIC_URL in [vars] below
+# Step 1: Run: wrangler r2 bucket create smartinvoice-files
+# Step 2: Enable public access in Cloudflare Dashboard
+#         R2 → smartinvoice-files → Settings → Public Access → Enable
+# Step 3: Copy the public URL and paste it as R2_PUBLIC_URL below
 [[r2_buckets]]
 binding     = "BUCKET"
 bucket_name = "smartinvoice-files"
@@ -25,10 +25,15 @@ FRONTEND_URL    = "https://smartinvoice.pages.dev"
 COMMISSION_RATE = "0.10"
 MIN_PAYOUT_KOBO = "500000"
 R2_PUBLIC_URL   = "https://pub-XXXX.r2.dev"
+# Replace pub-XXXX.r2.dev with your actual R2 public URL
+# Found in: R2 Dashboard → smartinvoice-files → Settings → Public Access
 
-# ── Secrets (never stored here — set via CLI) ─────────────────
-# Run these once from inside the worker/ folder:
-#
-#   wrangler secret put PAYSTACK_SECRET_KEY
-#   wrangler secret put LICENSE_SECRET
-#   wrangler secret put ADMIN_SECRET
+# ── Secrets — set via CLI, never put real values here ─────────
+# wrangler secret put PAYSTACK_SECRET_KEY   → sk_live_...
+# wrangler secret put LICENSE_SECRET        → IAT-SIP-PRO-2026-a9f3b7c1
+# wrangler secret put ADMIN_SECRET          → strong password for admin panel
+
+# JWT_SECRET — add this secret:
+#   wrangler secret put JWT_SECRET
+# Use any long random string, e.g.:
+#   node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"

@@ -60,6 +60,12 @@ export default {
         return handleAgentGet(path, env, origin);
 
       // ── Admin routes ────────────────────────────────────────
+      // ── Auth routes ───────────────────────────────────────
+      if (method === 'POST' && path === '/auth/signup')        return handleSignup(req, env, origin);
+      if (method === 'POST' && path === '/auth/login')         return handleLogin(req, env, origin);
+      if (method === 'GET'  && path === '/auth/me')            return handleMe(req, env, origin);
+      if (method === 'POST' && path === '/auth/link-licence')  return handleLinkLicence(req, env, origin);
+
       if (!adminAuth(req, env))
         return path.startsWith('/admin')
           ? json({ error: 'Unauthorized — invalid or missing x-admin-secret' }, 401, origin)
@@ -84,6 +90,9 @@ export default {
         return handleCreatePayout(req, env, origin);
 
       // ── R2 File storage ──────────────────────────────────────
+      if (method === 'POST'  && path === '/activate-device')
+        return handleActivateDevice(req, env, origin);
+
       if (method === 'POST'   && path === '/files/upload')
         return handleFileUpload(req, env, origin);
       if (method === 'DELETE' && path.startsWith('/files/'))
@@ -569,6 +578,76 @@ async function handleMarkPaid(path, env, origin) {
 }
 
 
+
+// ════════════════════════════════════════════════════════════
+// DEVICE ACTIVATION — multi-device licence enforcement
+// M: 1 device | X: 3 devices | G: 5 devices
+// ════════════════════════════════════════════════════════════
+
+const MAX_DEVICES = { M: 1, X: 3, G: 5 };
+
+async function handleActivateDevice(req, env, origin) {
+  let body;
+  try { body = await req.json(); }
+  catch { return json({ error: 'Invalid JSON' }, 400, origin); }
+
+  const { licenseKey, deviceFingerprint, plan } = body || {};
+
+  if (!licenseKey || !deviceFingerprint || !plan) {
+    return json({ error: 'licenseKey, deviceFingerprint and plan are required' }, 400, origin);
+  }
+
+  const maxDevices = MAX_DEVICES[plan] || 1;
+
+  // Check if this device is already registered for this key
+  const existing = await env.DB.prepare(
+    `SELECT id FROM device_activations WHERE license_key = ? AND device_fp = ?`
+  ).bind(licenseKey, deviceFingerprint).first();
+
+  if (existing) {
+    // Already registered — just return current count
+    const countRow = await env.DB.prepare(
+      `SELECT COUNT(*) as count FROM device_activations WHERE license_key = ?`
+    ).bind(licenseKey).first();
+    return json({
+      allowed:      true,
+      currentCount: countRow.count,
+      maxDevices,
+      existing:     true,
+    }, 200, origin);
+  }
+
+  // Count how many devices are already activated for this key
+  const countRow = await env.DB.prepare(
+    `SELECT COUNT(*) as count FROM device_activations WHERE license_key = ?`
+  ).bind(licenseKey).first();
+
+  const currentCount = countRow.count || 0;
+
+  if (currentCount >= maxDevices) {
+    return json({
+      allowed:      false,
+      currentCount,
+      maxDevices,
+      error:        `Device limit reached. Your ${plan === 'M' ? 'Micro' : plan === 'X' ? 'Medium' : 'Growth'} plan allows ${maxDevices} device${maxDevices > 1 ? 's' : ''}. Deactivate a device or upgrade your plan.`,
+    }, 403, origin);
+  }
+
+  // Register this device
+  const now = new Date().toISOString();
+  await env.DB.prepare(
+    `INSERT OR IGNORE INTO device_activations (license_key, device_fp, plan, activated_at)
+     VALUES (?, ?, ?, ?)`
+  ).bind(licenseKey, deviceFingerprint, plan, now).run();
+
+  return json({
+    allowed:      true,
+    currentCount: currentCount + 1,
+    maxDevices,
+    existing:     false,
+  }, 201, origin);
+}
+
 // ════════════════════════════════════════════════════════════
 // R2 FILE STORAGE — logos, signatures, invoice images, agent photos
 // ════════════════════════════════════════════════════════════
@@ -733,6 +812,191 @@ function extractReferralCode(meta) {
         return String(f.value).trim();
   }
   return null;
+}
+
+
+// ════════════════════════════════════════════════════════════
+// AUTH — Sign up, sign in, account management
+// ════════════════════════════════════════════════════════════
+
+// ── JWT helpers ──────────────────────────────────────────────
+function b64url(str) {
+  return btoa(unescape(encodeURIComponent(str)))
+    .replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
+}
+function b64urlDecode(str) {
+  const padded = str + '='.repeat((4 - str.length % 4) % 4);
+  return decodeURIComponent(escape(atob(padded.replace(/-/g, '+').replace(/_/g, '/'))));
+}
+
+async function createJWT(payload, secret) {
+  const header = b64url(JSON.stringify({ alg: 'HS256', typ: 'JWT' }));
+  const body   = b64url(JSON.stringify(payload));
+  const data   = `${header}.${body}`;
+  const sig    = await hmacSHA256hex(secret, data);
+  const sigBytes = new Uint8Array(sig.match(/.{2}/g).map(b => parseInt(b, 16)));
+  const sigB64   = btoa(String.fromCharCode(...sigBytes))
+    .replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
+  return `${data}.${sigB64}`;
+}
+
+async function verifyJWT(token, secret) {
+  if (!token) return null;
+  try {
+    const parts = token.split('.');
+    if (parts.length !== 3) return null;
+    const [header, body, sig] = parts;
+    const data         = `${header}.${body}`;
+    const expectedSig  = await hmacSHA256hex(secret, data);
+    const expectedBytes = new Uint8Array(expectedSig.match(/.{2}/g).map(b => parseInt(b, 16)));
+    const expectedB64   = btoa(String.fromCharCode(...expectedBytes))
+      .replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
+    if (expectedB64 !== sig) return null;
+    const payload = JSON.parse(b64urlDecode(body));
+    if (payload.exp && Date.now() / 1000 > payload.exp) return null;
+    return payload;
+  } catch { return null; }
+}
+
+async function getAuthUser(req, env) {
+  const auth  = req.headers.get('Authorization') || '';
+  const token = auth.replace('Bearer ', '').trim();
+  if (!token) return null;
+  return verifyJWT(token, env.JWT_SECRET || 'fallback-dev-secret');
+}
+
+// ── Password helpers (PBKDF2) ─────────────────────────────────
+async function hashPassword(password) {
+  const enc  = new TextEncoder();
+  const salt = crypto.getRandomValues(new Uint8Array(16));
+  const key  = await crypto.subtle.importKey('raw', enc.encode(password), 'PBKDF2', false, ['deriveBits']);
+  const bits = await crypto.subtle.deriveBits(
+    { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' }, key, 256
+  );
+  const hashHex = Array.from(new Uint8Array(bits)).map(b => b.toString(16).padStart(2,'0')).join('');
+  const saltHex = Array.from(salt).map(b => b.toString(16).padStart(2,'0')).join('');
+  return `${saltHex}:${hashHex}`;
+}
+
+async function verifyPassword(password, stored) {
+  const [saltHex, expectedHash] = stored.split(':');
+  if (!saltHex || !expectedHash) return false;
+  const salt = new Uint8Array(saltHex.match(/.{2}/g).map(b => parseInt(b, 16)));
+  const enc  = new TextEncoder();
+  const key  = await crypto.subtle.importKey('raw', enc.encode(password), 'PBKDF2', false, ['deriveBits']);
+  const bits = await crypto.subtle.deriveBits(
+    { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' }, key, 256
+  );
+  const hashHex = Array.from(new Uint8Array(bits)).map(b => b.toString(16).padStart(2,'0')).join('');
+  return hashHex === expectedHash;
+}
+
+// ── Auth handlers ────────────────────────────────────────────
+
+async function handleSignup(req, env, origin) {
+  let body;
+  try { body = await req.json(); } catch { return json({ error: 'Invalid JSON' }, 400, origin); }
+
+  const { name, email, password } = body || {};
+  if (!name || !email || !password)
+    return json({ error: 'name, email and password are required' }, 400, origin);
+  if (password.length < 6)
+    return json({ error: 'Password must be at least 6 characters' }, 400, origin);
+
+  const cleanEmail = email.toLowerCase().trim();
+
+  const existing = await env.DB.prepare('SELECT id FROM users WHERE email = ?').bind(cleanEmail).first();
+  if (existing) return json({ error: 'An account with this email already exists' }, 409, origin);
+
+  const hash = await hashPassword(password);
+  const now  = new Date().toISOString();
+
+  await env.DB.prepare(
+    'INSERT INTO users (name, email, password_hash, created_at) VALUES (?, ?, ?, ?)'
+  ).bind(String(name).trim(), cleanEmail, hash, now).run();
+
+  const user = await env.DB.prepare(
+    'SELECT id, name, email, license_key, plan FROM users WHERE email = ?'
+  ).bind(cleanEmail).first();
+
+  const jwtSecret = env.JWT_SECRET || 'fallback-dev-secret';
+  const token = await createJWT(
+    { sub: user.id, email: user.email, exp: Math.floor(Date.now() / 1000) + 30 * 86400 },
+    jwtSecret
+  );
+
+  return json({ token, user: { id: user.id, name: user.name, email: user.email, licenseKey: user.license_key, plan: user.plan } }, 201, origin);
+}
+
+async function handleLogin(req, env, origin) {
+  let body;
+  try { body = await req.json(); } catch { return json({ error: 'Invalid JSON' }, 400, origin); }
+
+  const { email, password } = body || {};
+  if (!email || !password) return json({ error: 'email and password are required' }, 400, origin);
+
+  const cleanEmail = email.toLowerCase().trim();
+  const user = await env.DB.prepare(
+    'SELECT id, name, email, password_hash, license_key, plan FROM users WHERE email = ?'
+  ).bind(cleanEmail).first();
+
+  if (!user) {
+    // Constant-time response to prevent user enumeration
+    await hashPassword('dummy-constant-time-check');
+    return json({ error: 'Invalid email or password' }, 401, origin);
+  }
+
+  const valid = await verifyPassword(password, user.password_hash);
+  if (!valid) return json({ error: 'Invalid email or password' }, 401, origin);
+
+  await env.DB.prepare('UPDATE users SET last_login = ? WHERE id = ?')
+    .bind(new Date().toISOString(), user.id).run();
+
+  const jwtSecret = env.JWT_SECRET || 'fallback-dev-secret';
+  const token = await createJWT(
+    { sub: user.id, email: user.email, exp: Math.floor(Date.now() / 1000) + 30 * 86400 },
+    jwtSecret
+  );
+
+  return json({
+    token,
+    user: { id: user.id, name: user.name, email: user.email, licenseKey: user.license_key, plan: user.plan }
+  }, 200, origin);
+}
+
+async function handleMe(req, env, origin) {
+  const payload = await getAuthUser(req, env);
+  if (!payload) return json({ error: 'Unauthorized' }, 401, origin);
+
+  const user = await env.DB.prepare(
+    'SELECT id, name, email, license_key, plan, created_at FROM users WHERE id = ?'
+  ).bind(payload.sub).first();
+
+  if (!user) return json({ error: 'User not found' }, 404, origin);
+  return json({ id: user.id, name: user.name, email: user.email, licenseKey: user.license_key, plan: user.plan, createdAt: user.created_at }, 200, origin);
+}
+
+async function handleLinkLicence(req, env, origin) {
+  const payload = await getAuthUser(req, env);
+  if (!payload) return json({ error: 'Unauthorized' }, 401, origin);
+
+  let body;
+  try { body = await req.json(); } catch { return json({ error: 'Invalid JSON' }, 400, origin); }
+
+  const { licenseKey } = body || {};
+  if (!licenseKey) return json({ error: 'licenseKey is required' }, 400, origin);
+
+  // Verify licence exists and belongs to this user's email
+  const lic = await env.DB.prepare(
+    'SELECT plan FROM licenses WHERE license_key = ?'
+  ).bind(licenseKey).first();
+
+  if (!lic) return json({ error: 'Licence key not found in our records' }, 404, origin);
+
+  await env.DB.prepare('UPDATE users SET license_key = ?, plan = ? WHERE id = ?')
+    .bind(licenseKey, lic.plan, payload.sub).run();
+
+  return json({ linked: true, plan: lic.plan }, 200, origin);
 }
 
 // ════════════════════════════════════════════════════════════
